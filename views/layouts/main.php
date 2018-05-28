@@ -32,7 +32,7 @@ AppAsset::register($this);
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
             <a href="#" class="navbar-brand">
                 <div class="col-lg-3 col-md-3 xol-sm-12">
-                    <img src="img/logo.png" alt="logo">
+                    <img src="/img/logo.png" alt="logo" >
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -46,10 +46,10 @@ AppAsset::register($this);
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ">
-                        <a href="#features" class="nav-link">FEATURES</a>
+                        <a href="/site" class="nav-link">FEATURES</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="#works" class="nav-link">WORKS</a>
+                        <a href="/category/index" class="nav-link">Товары</a>
                     </li>
                     <li class="nav-item ">
                         <a href="#author_block" class="nav-link">OUR TEAM</a>

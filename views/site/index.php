@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 
-$this->title = 'ActiveBox';
+$this->title = 'ActiveBox1';
 ?>
 <div class="FEATURES" id="features">
     <div class="row title">

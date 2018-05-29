@@ -29,6 +29,7 @@ class Category extends \yii\db\ActiveRecord
         return [
             [['Name', 'image'], 'required'],
             [['Name', 'image'], 'string', 'max' => 50],
+            [['parent_id'], 'integer'],
         ];
     }
 
@@ -41,6 +42,7 @@ class Category extends \yii\db\ActiveRecord
             'id' => 'ID',
             'Name' => 'Name',
             'image' => 'Image',
+             'parent_id' => 'Parent_id',
         ];
     }
 }

@@ -13,6 +13,7 @@ use Yii;
  * @property string $Img
  * @property int $Count
  * @property double $Price
+ * @property int $popular
  * @property int $id_Category
  * @property string $Date
  */
@@ -33,7 +34,7 @@ class Items extends \yii\db\ActiveRecord
     {
         return [
             [['Name', 'Description', 'Img', 'Count', 'Price', 'id_Category'], 'required'],
-            [['Count', 'id_Category'], 'integer'],
+            [['Count', 'popular', 'id_Category'], 'integer'],
             [['Price'], 'number'],
             [['Date'], 'safe'],
             [['Name', 'Img'], 'string', 'max' => 50],
@@ -53,6 +54,7 @@ class Items extends \yii\db\ActiveRecord
             'Img' => 'Img',
             'Count' => 'Count',
             'Price' => 'Price',
+            'popular' => 'Popular',
             'id_Category' => 'Id  Category',
             'Date' => 'Date',
         ];

@@ -30,9 +30,9 @@ AppAsset::register($this);
 <div class="container-fluid">
     <div class="row header">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-            <a href="#" class="navbar-brand">
-                <div class="col-lg-3 col-md-3 xol-sm-12">
-                    <img src="/img/logo.png" alt="logo" >
+            <a href="#" class="col-lg-3 col-md-3 col-sm-12 navbar-brand">
+                <div class="col-lg-12 col-md-12 xol-sm-12 logo">
+                    <!--<img src="/img/logo.png" alt="logo" >-->
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -44,27 +44,46 @@ AppAsset::register($this);
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a href="/site" class="nav-link">FEATURES</a>
+                        <a href="/site" class="nav-link">Главная</a>
                     </li>
                     <li class="nav-item ">
                         <a href="/category/index" class="nav-link">Товары</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="#author_block" class="nav-link">OUR TEAM</a>
+                        <a href="#author_block" class="nav-link">О магазине</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="#works" class="nav-link">TESTIMONIALS</a>
+                        <a href="#works" class="nav-link">Доставка</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="#block_up_footer" class="nav-link">DOWNLOAD</a>
+                        <a href="#block_up_footer" class="nav-link">Гарантия и сервис</a>
                     </li>
                 </ul>
+                <form class="form-inline">
 
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputPassword2" class="sr-only">Password</label>
+                        <input type="text" class="form-control" id="inputPassword2" placeholder="Поиск товара">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Поиск</button>
+                </form>
+                <div id="tools" class="col-lg-3 col-md-3 col-sm-12">
+                    <div id="shopCart" class="shop-cart" data-shopcart="1">
+                        <div id="basket">
+                            <p class="h1"><i class="fa fa-shopping-cart"></i> Корзина</p>
+                            <div class="empty">
+                                <p class="clear_basket">В вашей корзине нет товаров!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </nav>
     </div>
+</div>
 </div>
 
 

@@ -34,6 +34,7 @@ class AppAsset extends AssetBundle
         'js/jquery.flexslider-min.js',
         'js/main.js',
         'js/bootstrap.min.js'
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

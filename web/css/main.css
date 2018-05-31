@@ -5,6 +5,7 @@ body {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
     color: #6c7279;
+    
 }
 
 h5 {
@@ -29,11 +30,11 @@ h5 {
     display: block;
     padding: 0;
 }
-
-a {
-    color: #e84545;
-    
+.phone_info
+{
+    margin-bottom: 10px;
 }
+
 a:hover
 {
     text-decoration: none;
@@ -44,24 +45,23 @@ a:hover
 
 .navbar {
     min-height: 74px;
-    background-color: #30334c;
-    text-align: center;
-    background-color: #30334c;
-    border-style: none none solid none;
-    border-color: #4e555b;
-    border-width: 1px;
+    background-color: #ecf6fd;
+    text-align: center;  
+    
 }
 
-.nav-item {
+.nav-item  a{
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.75);
+    color: #45d451 !important;
     font-size: 13px;
     font-weight: 700;
-    margin-left: 40px;
     text-transform: uppercase;
     margin-right: auto;
-    
-
+}
+.logo img
+{
+    width: 100%;
+    height: auto;
 }
 
 .title {
@@ -307,19 +307,31 @@ ul, il {
 .buttom_red_footer {
     margin-top: 30px;
 }
-
 .footer {
-    background-color: #3a3e64;
+    background-color: #ecf6fd;
 
 }
 
 .block_left_footer, .block_right_footer, .block_center_footer {
-    padding: 40px 0;
+    padding-top: 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
 
 }
-
+.footer-info-time
+{
+    padding-top: 10px;
+}
+.block_right_footer img
+{
+    width:  auto;
+    height: 200px;
+    padding-top: 20px;
+}
+.footer_phone
+{
+    font-size: 35px;
+}
 .footer h5 {
     color: white;
 
@@ -366,8 +378,18 @@ ul, il {
     
 
 }
-
-
+.glyphicon-qrcode
+{
+    font-size: 30px;
+    color: black;
+}
+.footer-info-wrapper
+{
+    color: #80888e;
+    font-size: 15px;
+    
+    
+}
 /* ==========================================================================
     Font Icon (http://www.elegantthemes.com/blog/freebie-of-the-week/free-line-style-icons)
 ========================================================================== */

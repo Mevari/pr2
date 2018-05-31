@@ -49,7 +49,7 @@ AppAsset::register($this);
                         <a href="#features" class="nav-link">FEATURES</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="#works" class="nav-link">WORKS</a>
+                        <a href="/category/index" class="nav-link">WORKS</a>
                     </li>
                     <li class="nav-item ">
                         <a href="#author_block" class="nav-link">OUR TEAM</a>

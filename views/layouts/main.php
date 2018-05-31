@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -15,106 +14,156 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    
-    <?php $this->head() ?>
-</head>
-<body>
-<?php $this->beginBody() ?>
-<div class="container-fluid">
-    <div class="row header">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-            <a href="#" class="navbar-brand">
-                <div class="col-lg-3 col-md-3 xol-sm-12">
-                    <img src="/img/logo.png" alt="logo" >
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+        <?= Html::csrfMetaTags() ?>
+        <title><?= Html::encode($this->title) ?></title>
 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a href="/site" class="nav-link">FEATURES</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="/category/index" class="nav-link">Товары</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#author_block" class="nav-link">OUR TEAM</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#works" class="nav-link">TESTIMONIALS</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#block_up_footer" class="nav-link">DOWNLOAD</a>
-                    </li>
-                </ul>
+        <?php $this->head() ?>
+        
 
-            </div>
-        </nav>
-    </div>
-</div>
+    </head>
+    <body>
+        <?php $this->beginBody() ?>
+        <div class="container-fluid">
+            <div class="row header">
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+                    <a href="#" class="col-lg-3 col-md-3 col-sm-12 navbar-brand">
+                        <div class="col-lg-12 col-md-12 xol-sm-12 logo">
+                            <!--<img src="/img/logo.png" alt="logo" >-->
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+                        <ul class="navbar-nav">
+                            <li class="nav-item ">
+                                <a href="/site" class="nav-link">Главная</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="/category/index" class="nav-link">Товары</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="#author_block" class="nav-link">О магазине</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="#works" class="nav-link">Доставка</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="#block_up_footer" class="nav-link">Гарантия и сервис</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline">
 
-
-
-    <!--<div class="container">-->
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    <!--</div>-->
-<!--</div>-->
-
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row footer">
-            <div class="col-lg-4 co-md-4 col-sm-12 block_left_footer">
-                <h5>LOCATION</h5>
-                <p>3481 Melrose Place<br>
-                    Beverly Hills, CA 90210</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 block_center_footer">
-                <h5>SHARE WITH LOVE</h5>
-                <ul class="social-icons icon_footer">
-                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                    <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 block_right_footer">
-                <h5> ABOUT ACTIVEBOX</h5>
-                <p> Cras justo odio, dapibus ac facilisis in, egestas eget<br>
-                    quam.
-                    Donec ullamcorper nulla non metus auctor fringilla.</p>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 text_footer">
-                <div class="footer_title">
-                    <p>Copyright © 2018 Radmone Company. All Rights Reserved<br>
-                        Made with
-                        <i class="fa fa-heart pulse"></i> by
-                        <a href="http://kamalchaneman.com/">Rodya</a></p>
-                </div>
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="inputPassword2" class="sr-only">Password</label>
+                                <input type="text" class="form-control" id="inputPassword2" placeholder="Поиск товара">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Поиск</button>
+                        </form>
+                          <div id="tools" class="col-lg-3 col-md-3 col-sm-12">
+                            <div id="shopCart" class="shop-cart" data-shopcart="1">
+                                <div id="basket">
+                                    <p class="h1"><i class="fa fa-shopping-cart"></i> Корзина</p>
+                                    <div class="empty">
+                                        <p class="clear_basket">В вашей корзине нет товаров!</p>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    
+                </nav>
             </div>
         </div>
-    </div>
-</footer>
+
+
+
+
+        <!--<div class="container">-->
+        <?=
+        Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ])
+        ?>
+        <?= Alert::widget() ?>
+<?= $content ?>
+        <!--</div>-->
+        <!--</div>-->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row footer">
+                    <div class="col-lg-4 co-md-4 col-sm-12 block_left_footer">
+                        
+                            <div class="footer-info-wrapper">
+
+                                <span class="glyphicon glyphicon-qrcode"></span>
+                                <h5>
+                                    Na_Divane.pl – первый фирменный магазин всячины в Беларуси
+                                </h5>
+                                <p >
+                                    OOO "Новый символ" <br>
+                                    УНП 132431 от 21/05/2018 <br>
+                                    В Торговом реестре с 02/05/2016 <br>
+                                    Юр. Адрес: 2260012, Республика Беларусь <br>
+                                    г. Хотимск, ул. Гоголя 10, пом 32.
+                                </p>
+                                
+                                <br>                           
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 block_center_footer">
+                        <div class="item item-3"> 
+                            <h5>Контакты:</h5>
+                            <div class="footer-info-wrapper">             
+                                <div class="footer-info-time">
+                                    <div id="phone">
+                                        <div class="phone_info">
+                                            <a href="tel:+375297777777">
+                                                <img src="web/img/mts.png" width="21" height="21" alt="МТС"> 
+                                                <span itemprop="telephone">+375 29 761-71-71</span>
+                                            </a>
+                                        </div>
+                                        <div class="phone_info">
+                                            <a href="tel:+375297777777">
+                                                <img src="web/img/velcom.png" width="21" height="21" alt="Velcom"> 
+                                                <span itemprop="telephone">+375 44 761-71-71</span>
+                                            </a>
+                                        </div>
+                                        <div class="phone_info">
+                                            <a href="tel:+375297777777">
+                                                <img src="web/img/life.png" width="21" height="21" alt="Life"> 
+                                                <span itemprop="telephone">+375 25 761-71-71</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p><br>Магазин работает ежедневно 
+                                        <br>с 9:00 – 21:00
+                                    </p></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 block_right_footer">
+                        
+                        <img src="web/img/internet-magazin.png"/>
+                    </div>
+                  
+                </div>
+            </div>
+        </footer>
 
 <?php $this->endBody() ?>
-</body>
+    </body>
 </html>
 <?php $this->endPage() ?>

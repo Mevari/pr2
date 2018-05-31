@@ -84,7 +84,7 @@ $this->title = 'ActiveBox';
         </div>
     </div>
 </section>
-<section>
+<!--<section>
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 author_block" id="author_block">
@@ -179,7 +179,7 @@ $this->title = 'ActiveBox';
         </div>
     </div>
 
-</section>
+</section>-->
 
 <div class="flexslider">
     <ul class="slides">
@@ -193,11 +193,9 @@ $this->title = 'ActiveBox';
 </div>
 <div class="container">
     <div class="row block_up_footer" id="block_up_footer">
-        <div class="col-md-12  text_center_footer">
-
-            <h4>Are You Ready to Start? Download Now For Free!</h4>
-            <h5>FUSCE DAPIBUS, TELLUS AC CURSUS COMMODO</h5>
-            <button type="button" class="btn buttom_red buttom_red_footer">Download for free</button>
+        <div class="col-md-12  text_center_footer">           
+            <h5>Вы можете оставить свой номер и мы с вами свяжемся в ближайшее время!</h5>
+            <button type="button" class="btn buttom_red buttom_red_footer">Обратная связь</button>
         </div>
     </div>
 </div>

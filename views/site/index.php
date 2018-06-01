@@ -1,8 +1,48 @@
 <?php
 /* @var $this yii\web\View */
 
-$this->title = 'ActiveBox';
+$this->title = 'Na_Divane';
 ?>
+<section>
+    <div class="container-fluid ">
+        <div class="flexslider">
+            <ul class="slides">
+
+                <li >
+                    <div class="row nopadding">
+                        <div class ="col-12 nopadding">
+                            <div>
+                                <img src="img/sale1.jpg" />
+                            </div>
+                        </div>
+                       
+                    </div>
+                </li>
+                <li>
+                    <div class="row nopadding">
+                        <div class ="col-12 nopadding">
+                            <div>
+                                <img src="img/sale3.jpg" />
+                            </div>
+                        </div>
+                       
+                    </div>
+                </li>
+                 <li>
+                    <div class="row nopadding">
+                        <div class ="col-12 nopadding">
+                            <div>
+                                <img src="img/sale2.jpg" />
+                            </div>
+                        </div>
+                       
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</section>
 <div class="container">
     <div class="FEATURES" id="features">
         <div class="row title">
@@ -13,6 +53,7 @@ $this->title = 'ActiveBox';
                     <br><br>Интернет-магазин <b><i>Na_Divane.pl</i></b> это ваш помощник в мире покупок .
                     <br>У нас в магазине вы можете удобно выбрать  и сравнить любой товар,  а наша служба доставки точно и в срок  доставит ваш  заказ в удобное для вас место.
                     <br> Доставка товаров осуществляется по всей территории <b>Республике Беларусь</b>.</p>
+
             </div>
         </div>
     </div>
@@ -72,7 +113,7 @@ $this->title = 'ActiveBox';
         <div class="row photo_gallery">  
             <?php
             foreach ($popular_items as $items) {
-                echo '<div class="col-lg-3 fadeIn animated shrink"><a href="#"  >';
+                echo '<div class="col-lg-3 fadeIn "><a href="#"  >';
                 echo '<div class="imgCenter"><img src="' . $items->Img . '" alt="" class="img_p"></div>';
                 echo '<div class="items_opis">';
                 echo '<h5>' . $items->Name . '</h5>';
@@ -181,16 +222,7 @@ $this->title = 'ActiveBox';
 
 </section>-->
 
-<div class="flexslider">
-    <ul class="slides">
-        <li>
-            <img src="img/testimonial-2.jpg"/>
-        </li>
-        <li>
-            <img src="img/testimonial-2.jpg"/>
-        </li>
-    </ul>
-</div>
+
 <div class="container">
     <div class="row block_up_footer" id="block_up_footer">
         <div class="col-md-12  text_center_footer">           

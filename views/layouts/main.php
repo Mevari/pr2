@@ -14,77 +14,87 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-    <head>
-        <meta charset="<?= Yii::$app->charset ?>">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
-        <?= Html::csrfMetaTags() ?>
-        <title><?= Html::encode($this->title) ?></title>
 
-        <?php $this->head() ?>
-        
+<head>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
+    
+    <?php $this->head() ?>
+    
 
-    </head>
-    <body>
-        <?php $this->beginBody() ?>
-        <div class="container-fluid">
-            <div class="row header">
-                <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-                    <a href="#" class="col-lg-3 col-md-3 col-sm-12 navbar-brand">
-                        <div class="col-lg-12 col-md-12 xol-sm-12 logo">
-                            <!--<img src="/img/logo.png" alt="logo" >-->
-                        </div>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item ">
-                                <a href="/site" class="nav-link">Главная</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="/category/index" class="nav-link">Товары</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="#author_block" class="nav-link">О магазине</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="#works" class="nav-link">Доставка</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="#block_up_footer" class="nav-link">Гарантия и сервис</a>
-                            </li>
-                        </ul>
-                        <form class="form-inline">
-
-                            <div class="form-group mx-sm-3 mb-2">
-                                <label for="inputPassword2" class="sr-only">Password</label>
-                                <input type="text" class="form-control" id="inputPassword2" placeholder="Поиск товара">
+</head>
+<body>
+<?php $this->beginBody() ?>
+<div class="container-fluid">
+    <div class="row header">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+            <div class="col-lg-2 col-md-11 col-sm-12 navbar-brand">
+                <div class="col-lg-12 col-md-12 col-sm-12 logo">
+                   <img src="/img/logo.png" alt="logo" >
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-lg-10 col-md-12 col-sm-12  collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="col-lg-3 col-md-4 col-sm-12">
+            <form action="" class="search-form">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" name="search" id="search" placeholder="">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+            </form>
+        </div>
+                 <div class="col-lg-7 col-md-6 col-sm-12 menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a href="/site" class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="/category/index" class="nav-link">Товары</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#author_block" class="nav-link">О магазине</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#works" class="nav-link">Доставка</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#block_up_footer" class="nav-link">Гарантия и сервис</a>
+                    </li>
+                </ul>     
+                 </div>
+                <div   class="col-lg-2 col-md-2 col-sm-12">
+               
+                <div id="tools">
+                    <div id="shopCart" class="shop-cart" data-shopcart="1">
+                        <div id="basket">
+                            <p class="h1"><i class="fa fa-shopping-cart"></i> Корзина</p>
+                            <div class="empty">
+                                <p class="clear_basket">В вашей корзине нет товаров!</p>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-2">Поиск</button>
-                        </form>
-                          <div id="tools" class="col-lg-3 col-md-3 col-sm-12">
-                            <div id="shopCart" class="shop-cart" data-shopcart="1">
-                                <div id="basket">
-                                    <p class="h1"><i class="fa fa-shopping-cart"></i> Корзина</p>
-                                    <div class="empty">
-                                        <p class="clear_basket">В вашей корзине нет товаров!</p>
-                                    </div>
-                                </div>
-                            </div>                            
                         </div>
                     </div>
-                    
-                </nav>
+                </div>
+                 </div>
             </div>
-        </div>
+
+        </nav>
+    </div>
+</div>
+
+
+    
+
 
 
 
@@ -109,7 +119,7 @@ AppAsset::register($this);
 
                                 <span class="glyphicon glyphicon-qrcode"></span>
                                 <h5>
-                                    Na_Divane.pl – первый фирменный магазин всячины в Беларуси
+                                    Na_Divane.pl – Первый фирменный магазин всячины в Беларуси
                                 </h5>
                                 <p >
                                     OOO "Новый символ" <br>
@@ -164,6 +174,6 @@ AppAsset::register($this);
         </footer>
 
 <?php $this->endBody() ?>
-    </body>
+    
 </html>
 <?php $this->endPage() ?>

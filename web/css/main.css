@@ -50,6 +50,10 @@ a:hover
     text-align: center;  
 
 }
+.head_menu
+{
+    min-height: 74px;
+}
 .navbar-nav
 {
     display: block;
@@ -217,7 +221,7 @@ a:hover
 }
 .flexslider {
 
-    margin-top: 120px !important;
+    /*margin-top: 120px !important;*/
     background-color: #e9edef !important;    
 }
 .flexslider blockquote
@@ -834,7 +838,7 @@ ul, il {
     }
     .flexslider
     {
-        margin-top: 220px !important;
+        /*margin-top: 220px !important;*/
     }
 }
 /*dsf*/

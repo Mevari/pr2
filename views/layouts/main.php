@@ -29,7 +29,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="container-fluid">
+<div class="container-fluid head_menu">
     <div class="row header">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
             <div class="col-lg-2 col-md-11 col-sm-12 navbar-brand">

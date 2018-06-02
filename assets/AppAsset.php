@@ -34,9 +34,7 @@ class AppAsset extends AssetBundle
         'js/jquery.fancybox.pack.js',
         'js/jquery.flexslider-min.js',
         'js/main.js',
-        
-
-
+        'js/wow.min.js',      
     ];
     public $depends = [
         'yii\web\YiiAsset',

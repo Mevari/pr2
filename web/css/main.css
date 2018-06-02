@@ -40,8 +40,26 @@ a:hover
 {
     text-decoration: none;
 }
+#toTop {
+   
+    text-align:center;
+    padding:5px;
+    position:fixed;
+    bottom:10px; /* отступ кнопки от нижнего края страницы*/
+    left:10px;
+    cursor:pointer;
+    display:none;
+    color:#333;
+    font-family:verdana;
+    font-size:11px;
+}
+#toTop img
+{
+    height: 80px;
+    width: auto;
+}
 .section {
-    padding-bottom:  100px ;
+    padding-bottom:  10px ;
 }
 
 .navbar {
@@ -52,7 +70,7 @@ a:hover
 }
 .head_menu
 {
-    min-height: 74px;
+    min-height: 110px;
 }
 .navbar-nav
 {
@@ -221,7 +239,7 @@ a:hover
 }
 .flexslider {
 
-    /*margin-top: 120px !important;*/
+    /*margin-top: 40px !important;*/
     background-color: #e9edef !important;    
 }
 .flexslider blockquote
@@ -233,11 +251,7 @@ a:hover
 {
     font:italic 36px "Cardo", Georgia, "Times New Roman", serif;
     color: #fff;
-
-
 }
-
-
 
 .social-icons a {
     border: 1px solid #e8ecee;
@@ -838,7 +852,7 @@ ul, il {
     }
     .flexslider
     {
-        /*margin-top: 220px !important;*/
+        margin-top: 20px !important;
     }
 }
 /*dsf*/

@@ -172,7 +172,9 @@ AppAsset::register($this);
                 </div>
             </div>
         </footer>
-
+<div id= "toTop" > 
+   <img src="web/img/pageup.png">
+</div>
 <?php $this->endBody() ?>
     
 </html>

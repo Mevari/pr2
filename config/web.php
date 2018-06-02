@@ -1,5 +1,6 @@
 <?php
 
+// 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -9,12 +10,13 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'fOQNOOrFFYAnLQ3mY35oy5yti3hJJkM5',
+             'baseUrl' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -44,14 +46,15 @@ $config = [
         ],
         'db' => $db,
 
+
+
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
             // Hide index.php
             'showScriptName' => false,
-            // Use pretty URLs
-            'enablePrettyUrl' => true,
+            'rules' => [
+            ],
         ],
-
     ],
     'params' => $params,
 ];
@@ -61,15 +64,15 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+            // uncomment the following to add your IP if you are not connecting from localhost.
+            //'allowedIPs' => ['127.0.0.1', '::1'],
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+            // uncomment the following to add your IP if you are not connecting from localhost.
+            //'allowedIPs' => ['127.0.0.1', '::1'],
     ];
 }
 

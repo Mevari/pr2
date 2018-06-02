@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Items;
 
 class SiteController extends Controller
 {
@@ -60,8 +61,10 @@ class SiteController extends Controller
      * @return string
      */
     public function actionIndex()
-    {
-        return $this->render('index');
+    { 
+        $popular_items = Items::find()->where(['popular' => 1])->all();
+        
+        return $this->render('index',['popular_items'=>$popular_items]);
     }
 
     /**

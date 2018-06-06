@@ -32,7 +32,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div class="container-fluid">
     <div class="row header">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+        <nav class="navbar navbar-expand-lg navbar-dark col-lg-12 ">
             <div class="col-lg-2 col-md-11 col-sm-12 navbar-brand">
                 <div class="col-lg-12 col-md-12 col-sm-12 logo">
                    <img src="/img/logo.png" alt="logo" >

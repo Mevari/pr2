@@ -6,6 +6,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Items;
 /**
  * CategoryController implements the CRUD actions for Category model.
  */
@@ -34,8 +35,13 @@ class CategoryController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => Category::find(),
         ]);
+
+        $arrayItem = Items::find()->asArray()->all();
+
+
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'Items' => $arrayItem,
         ]);
     }
     /**

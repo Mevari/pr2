@@ -12,6 +12,7 @@ use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use yii\base\Widget;
 use app\models\category;
 use yii\bootstrap\Nav;
+use yii\helpers\Url;
 use yii;
 
 
@@ -26,8 +27,8 @@ class MenuWidget extends Widget
     public function run()
     {
 //
-        $menu = Yii::$app->cache->get('menu');
-        If ($menu) return $menu;
+//        $menu = Yii::$app->cache->get('menu');
+//        If ($menu) return $menu;
         $this->data = $this->GetCategory();
         $this->tree = $this->getTree();
 
@@ -38,7 +39,7 @@ class MenuWidget extends Widget
         $this->html = $html . $this->html;
         // $this->prv(($this->html));
 
-       Yii::$app->cache->set('menu', $this->html, 60 * 60 * 24);
+//       Yii::$app->cache->set('menu', $this->html, 60 * 60 * 24);
         return $this->html;
 
     }
@@ -79,13 +80,13 @@ class MenuWidget extends Widget
     {
 
         $html = '';
-        $html .= '<li>';
+        $html .= '<li data_id='.$cat['id']. '>';
         If ($cat['parent_id'] == '0') {
 
         $html .= '<div class="link">' . $cat['Name'] . '<i class="fa fa-chevron-down"></i></div>';
     }
         else{
-            $html .='<a href="#">'. $cat['Name'] . '</a>';
+            $html .='<a href='. Url::to(['category/index', 'id' => $cat['id']]) . '>'. $cat['Name'] . '</a>';
             }
 
         if ($cat['childs']) {

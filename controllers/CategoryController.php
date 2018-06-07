@@ -7,6 +7,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\Items;
+use yii\data\Pagination;
 /**
  * CategoryController implements the CRUD actions for Category model.
  */
@@ -30,18 +31,24 @@ class CategoryController extends Controller
      * Lists all Category models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id=0)
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Category::find(),
-        ]);
 
-        $arrayItem = Items::find()->asArray()->all();
+//        $id = Yii::$app->request->get('id');
+        $query = Items::find();
+        if($id<>0)
+        {
+            $query->where(['id_category'=>$id]);
+        }
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'PageSize'=>2,'forcePageParam'=>false,'pageSizeParam'=>false]);
 
+        $models = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
-            'Items' => $arrayItem,
+
+            'Items' => $models,
+            'pages' => $pages,
         ]);
     }
     /**

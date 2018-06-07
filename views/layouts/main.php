@@ -61,7 +61,7 @@ AppAsset::register($this);
                         <a href="/site" class="nav-link">Главная</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="/category/index" class="nav-link">Товары</a>
+                        <a href="/category" class="nav-link">Товары</a>
                     </li>
                     <li class="nav-item ">
                         <a href="#author_block" class="nav-link">О магазине</a>
@@ -141,19 +141,19 @@ AppAsset::register($this);
                                     <div id="phone">
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="web/img/mts.png" width="21" height="21" alt="МТС"> 
+                                                <img src="/img/mts.png" width="21" height="21" alt="МТС">
                                                 <span itemprop="telephone">+375 29 761-71-71</span>
                                             </a>
                                         </div>
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="web/img/velcom.png" width="21" height="21" alt="Velcom"> 
+                                                <img src="/img/velcom.png" width="21" height="21" alt="Velcom">
                                                 <span itemprop="telephone">+375 44 761-71-71</span>
                                             </a>
                                         </div>
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="web/img/life.png" width="21" height="21" alt="Life"> 
+                                                <img src="/img/life.png" width="21" height="21" alt="Life">
                                                 <span itemprop="telephone">+375 25 761-71-71</span>
                                             </a>
                                         </div>
@@ -167,7 +167,7 @@ AppAsset::register($this);
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 block_right_footer">
                         
-                        <img src="web/img/internet-magazin.png"/>
+                        <img src="/img/internet-magazin.png"/>
                     </div>
                   
                 </div>

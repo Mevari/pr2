@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 //  $(window).on('scroll', function() {
 //        var scroll = $(window).scrollTop();
@@ -18,34 +19,51 @@ $(document).ready(function(){
     });
 
   $(".work-box").fancybox({  });
-  
-});
 
-$(function() {
-    var Accordion = function(el, multiple) {
-        this.el = el || {};
-        this.multiple = multiple || false;
 
-        // Variables privadas
-        var links = this.el.find('.link');
-        // Evento
-        links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+    var last_id = localStorage.getItem('tab_id');
+    if (last_id) {
+        $menu_item=$(".accordion li[data_id='" +last_id+ "']");
+        $menu_item.addClass('open');
+        $next = $menu_item.children('ul');
+        $next.slideToggle(0);
     }
 
-    Accordion.prototype.dropdown = function(e) {
-        var $el = e.data.el;
-        $this = $(this),
-            $next = $this.next();
+    $('.accordion li').click(function () {
+        var tab_id = $(this).attr('data_id');
+        localStorage.setItem('tab_id', tab_id);
+    })
 
-        $next.slideToggle();
-        $this.parent().toggleClass('open');
+    $(function() {
+        var Accordion = function(el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
 
-        if (!e.data.multiple) {
-            $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-        };
-    }
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+        }
 
-    var accordion = new Accordion($('#accordion'), false);
+        Accordion.prototype.dropdown = function(e) {
+            var $el = e.data.el;
+            $this = $(this),
+                $next = $this.next();
+            console.log($this);
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }
+
+        var accordion = new Accordion($('#accordion'), false);
+
+
+    });
 });
+
+
 
 

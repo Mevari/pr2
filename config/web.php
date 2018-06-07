@@ -48,6 +48,9 @@ $config = [
             'showScriptName' => false,
 
             'rules' => [
+                'category/<id:\d+>/page/<page:\d+>' =>'category/index',
+                'category/page/<page:\d+>' =>'category/index',
+                'category/<id:\d+>' =>'category/index',
             ],
         ],
     ],

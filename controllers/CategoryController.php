@@ -1,14 +1,13 @@
 <?php
-
 namespace app\controllers;
-
 use Yii;
 use app\models\Category;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\models\Items;
+use yii\data\Pagination;
 /**
  * CategoryController implements the CRUD actions for Category model.
  */
@@ -28,22 +27,30 @@ class CategoryController extends Controller
             ],
         ];
     }
-
     /**
      * Lists all Category models.
      * @return mixed
      */
-    public function actionIndex()
-    {  
-        $dataProvider = new ActiveDataProvider([
-            'query' => Category::find(),
-        ]);
+    public function actionIndex($id=0)
+    {
+
+//        $id = Yii::$app->request->get('id');
+        $query = Items::find();
+        if($id<>0)
+        {
+            $query->where(['id_category'=>$id]);
+        }
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'PageSize'=>2,'forcePageParam'=>false,'pageSizeParam'=>false]);
+
+        $models = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+
+            'Items' => $models,
+            'pages' => $pages,
         ]);
     }
-
     /**
      * Displays a single Category model.
      * @param integer $id
@@ -56,7 +63,6 @@ class CategoryController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-
     /**
      * Creates a new Category model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -65,16 +71,13 @@ class CategoryController extends Controller
     public function actionCreate()
     {
         $model = new Category();
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         return $this->render('create', [
             'model' => $model,
         ]);
     }
-
     /**
      * Updates an existing Category model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -85,16 +88,13 @@ class CategoryController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         return $this->render('update', [
             'model' => $model,
         ]);
     }
-
     /**
      * Deletes an existing Category model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -105,10 +105,8 @@ class CategoryController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
-
     /**
      * Finds the Category model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -121,7 +119,6 @@ class CategoryController extends Controller
         if (($model = Category::findOne($id)) !== null) {
             return $model;
         }
-
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

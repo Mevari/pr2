@@ -1,3 +1,4 @@
+
 <?php
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -153,19 +154,19 @@ AppAsset::register($this);
                                     <div id="phone">
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="web/img/mts.png" width="21" height="21" alt="МТС"> 
+                                                <img src="/img/mts.png" width="21" height="21" alt="МТС"> 
                                                 <span itemprop="telephone">+375 29 761-71-71</span>
                                             </a>
                                         </div>
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="web/img/velcom.png" width="21" height="21" alt="Velcom"> 
+                                                <img src="/img/velcom.png" width="21" height="21" alt="Velcom"> 
                                                 <span itemprop="telephone">+375 44 761-71-71</span>
                                             </a>
                                         </div>
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="web/img/life.png" width="21" height="21" alt="Life"> 
+                                                <img src="/img/life.png" width="21" height="21" alt="Life"> 
                                                 <span itemprop="telephone">+375 25 761-71-71</span>
                                             </a>
                                         </div>
@@ -179,14 +180,14 @@ AppAsset::register($this);
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 block_right_footer">
                         
-                        <img src="web/img/internet-magazin.png"/>
+                        <img src="/img/internet-magazin.png"/>
                     </div>
                   
                 </div>
             </div>
         </footer>
 <div id= "toTop" > 
-   <img src="web/img/pageup.png">
+   <img src="/img/pageup.png">
 </div>
 <?php $this->endBody() ?>
     

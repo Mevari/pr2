@@ -54,6 +54,7 @@ AppAsset::register($this);
             	</div>
             </form>
         </div>
+      
                  <div class="col-lg-7 col-md-6 col-sm-12 menu">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
@@ -78,9 +79,21 @@ AppAsset::register($this);
                 <div id="tools">
                     <div id="shopCart" class="shop-cart" data-shopcart="1">
                         <div id="basket">
-                            <p class="h1"><i class="fa fa-shopping-cart"></i> Корзина</p>
+                            <p class="h1"><i class="fa fa-shopping-cart"></i><a href="/cart"> Корзина</a> </p>
                             <div class="empty">
-                                <p class="clear_basket">В вашей корзине нет товаров!</p>
+                                <span class="clear_basket">
+                                    <?php   if (isset($_SESSION['products'])) {
+                                        $count = 0;
+                                        foreach ($_SESSION['products'] as $id => $quantity) {
+                                            $count = $count + $quantity;
+                                        }
+                                        echo $count;
+                                    } else {
+                                        echo "Ваша корзина пуста";
+                                    }
+
+                                        ?>
+                                </span>
                             </div>
                         </div>
                     </div>

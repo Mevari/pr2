@@ -411,12 +411,83 @@ ul, il {
     font-size: 30px;
     color: black;
 }
+.glyphicon-plus,.glyphicon-minus
+{
+    color: black;
+}
 .footer-info-wrapper
 {
     color: #80888e;
     font-size: 15px;
 
 
+}
+.cart_title
+{
+    margin-bottom: 30px;
+}
+
+.photo_order_items
+{ background-color: white;
+    text-align: center;
+    height: 150px;
+}
+.photo_order_items img
+{
+    /*width: 100%;*/
+    width: auto;
+    max-width: 100%;
+    height: inherit;
+
+}
+.line_summa
+{   height: 20px;
+    border-style:solid none none none;
+    border-color: red;
+    border-width: 1px;
+    margin: 20px 0px;
+    width: 100%;
+    text-align: right;
+    padding-top: 10px;
+}
+.count_items,.items_pric
+{
+    font-size: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.cart_info
+{
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.items_order a:hover
+{
+    text-decoration: none;
+}
+.items_order a:link
+{
+    text-decoration: none;
+}
+
+
+.glyphicon-remove
+{
+    color: red;
+    font-size: 20px;
+}
+.order_row
+{   margin-bottom: 20px;
+}
+#basket a
+{
+    color: #6c7279;
+}
+.order_row p
+{   text-align: center;
+    color: #000000;
+    font-size: 15px;
 }
 /* ==========================================================================
     Font Icon (http://www.elegantthemes.com/blog/freebie-of-the-week/free-line-style-icons)

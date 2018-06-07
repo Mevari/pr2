@@ -62,7 +62,9 @@ class SiteController extends Controller
      * @return string
      */
     public function actionIndex()
-    { 
+    {
+        session_start();
+
         $popular_items = Items::find()->where(['popular' => 1])->all();
         $discount_img= Discount::find()->indexBy('id')->all();
         return $this->render('index',['popular_items'=>$popular_items,'discount_img'=>$discount_img]);

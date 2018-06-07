@@ -48,8 +48,11 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-           
+            'enableStrictParsing' => false,
             'rules' => [
+                'cart/add'=>'cart/add',
+                'cart/add/<id:\d+>'=>'cart/add',
+                'cart/delete_cart/<id:\d+>'=>'cart/delete_cart',
             ],
         ],
     ],

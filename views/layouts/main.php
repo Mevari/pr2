@@ -30,9 +30,9 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="container-fluid">
+<div class="container-fluid head_menu">
     <div class="row header">
-        <nav class="navbar navbar-expand-lg navbar-dark col-lg-12 ">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
             <div class="col-lg-2 col-md-11 col-sm-12 navbar-brand">
                 <div class="col-lg-12 col-md-12 col-sm-12 logo">
                    <img src="/img/logo.png" alt="logo" >
@@ -55,13 +55,14 @@ AppAsset::register($this);
             	</div>
             </form>
         </div>
+      
                  <div class="col-lg-7 col-md-6 col-sm-12 menu">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
                         <a href="/site" class="nav-link">Главная</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="/category" class="nav-link">Товары</a>
+                        <a href="/category/index" class="nav-link">Товары</a>
                     </li>
                     <li class="nav-item ">
                         <a href="#author_block" class="nav-link">О магазине</a>
@@ -79,9 +80,21 @@ AppAsset::register($this);
                 <div id="tools">
                     <div id="shopCart" class="shop-cart" data-shopcart="1">
                         <div id="basket">
-                            <p class="h1"><i class="fa fa-shopping-cart"></i> Корзина</p>
+                            <p class="h1"><i class="fa fa-shopping-cart"></i><a href="/cart"> Корзина</a> </p>
                             <div class="empty">
-                                <p class="clear_basket">В вашей корзине нет товаров!</p>
+                                <span class="clear_basket">
+                                    <?php   if (isset($_SESSION['products'])) {
+                                        $count = 0;
+                                        foreach ($_SESSION['products'] as $id => $quantity) {
+                                            $count = $count + $quantity;
+                                        }
+                                        echo $count;
+                                    } else {
+                                        echo "Ваша корзина пуста";
+                                    }
+
+                                        ?>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -141,19 +154,19 @@ AppAsset::register($this);
                                     <div id="phone">
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="/img/mts.png" width="21" height="21" alt="МТС">
+                                                <img src="/img/mts.png" width="21" height="21" alt="МТС"> 
                                                 <span itemprop="telephone">+375 29 761-71-71</span>
                                             </a>
                                         </div>
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="/img/velcom.png" width="21" height="21" alt="Velcom">
+                                                <img src="/img/velcom.png" width="21" height="21" alt="Velcom"> 
                                                 <span itemprop="telephone">+375 44 761-71-71</span>
                                             </a>
                                         </div>
                                         <div class="phone_info">
                                             <a href="tel:+375297777777">
-                                                <img src="/img/life.png" width="21" height="21" alt="Life">
+                                                <img src="/img/life.png" width="21" height="21" alt="Life"> 
                                                 <span itemprop="telephone">+375 25 761-71-71</span>
                                             </a>
                                         </div>
@@ -173,9 +186,10 @@ AppAsset::register($this);
                 </div>
             </div>
         </footer>
-
+<div id= "toTop" > 
+   <img src="/img/pageup.png">
+</div>
 <?php $this->endBody() ?>
     
 </html>
 <?php $this->endPage() ?>
-

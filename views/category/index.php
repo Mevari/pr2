@@ -6,7 +6,7 @@ use yii\widgets\LinkPager;
 $this->title = 'Categories';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<section>
+<section xmlns="http://www.w3.org/1999/html">
     <div class="container-fluid">
         <div class="row">
             <div class=" col-sm-2">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-lg-10 col-sm-10 ">
                 <?php foreach ($Items as $row): ?>
 
-                    <div class="col-lg-2 col-sm-2">
+                    <div class="col-lg-3 col-sm-3">
                         <div class="item_catalog">
 
                             <a href=<?= URL::to(['article/index', 'id' => $row['id']]); ?>>
@@ -24,12 +24,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <?= Html::img('/' . $row['Img']) ?>
                                 </div>
                             </a>
-
-                            <a href="#">
-                                <p><?= $row['Name'] ?></p>
-                            </a>
-                            <p class="price"><?= $row['Price'] . ' руб' ?></p>
-                            <i class="far fa-address-book"></i>
+                            <div class="items_tit">
+                               <span class="items_title">
+                                   <a href="#">
+                                    <p><?= $row['Name'] ?></p>
+                                </a></span>
+                                <p class="price"><?= $row['Price'] . ' руб' ?></p>
+                                <i class="far fa-address-book"></i>
+                                <span class="btn btn-warning cart_add" data-id="<?= $row['id'] ?>">В корзину!</span>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

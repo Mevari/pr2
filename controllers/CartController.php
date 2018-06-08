@@ -16,20 +16,24 @@ class CartController extends \yii\web\Controller
     public function actionIndex()
     {
         $cart_items = null;
-
+        $count = 0;
+        $summa = 0;
+        $mas=array();
         $id_item = array();
         if (isset($_SESSION['products'])) {
             foreach ($_SESSION['products'] as $id => $quantity) {
                 array_push($id_item, $id);
+
             }
 
             $cart_items = Items::find()->where(['id' => $id_item])->all();
-//            foreach ( $cart_items as $item) {
-//                $summa=$summa+$item->Price
-//            }
+            foreach ($cart_items as $elem) {
+                $count= $_SESSION['products'][$elem["id"]];
+                $summa += ($elem["Price"]*$count);
+            }
         }
 
-        return $this->render('cart', ['cart_items' => $cart_items]);
+        return $this->render('cart', ['cart_items' => $cart_items,'summa'=>$summa]);
     }
 
     public function actionAdd($id = 0)

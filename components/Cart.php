@@ -33,6 +33,7 @@ class Cart
         // Возвращаем количество товаров в корзине
         return self::countItems();
     }
+
     public static function countItems()
     {
         // Проверка наличия товаров в корзине
@@ -40,9 +41,14 @@ class Cart
             // Если массив с товарами есть
             // Подсчитаем и вернем их количество
             $count = 0;
+
+            $id_item=array();
             foreach ($_SESSION['products'] as $id => $quantity) {
+                array_push($id_item, $id);
                 $count = $count + $quantity;
             }
+
+
             return $count;
         } else {
             // Если товаров нет, вернем 0

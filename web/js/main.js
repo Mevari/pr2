@@ -50,21 +50,41 @@ $(document).ready(function(){
 
     $('input[name="phone"]').attr('placeholder', '+375 (00) 000-00-00').inputmask('+375 (99) 999-99-99');
 
-    $( "#target_plus" ).click(function() {
-        var a= (parseInt($('.count_items').text())+1);
-        $('.count_items').text(a);
+    $( ".target_plus" ).click(function() {
+        var c=$(this).parent().parent();
+        var c1=c.siblings(".items_price").find(".items_pric");
+        var summa=(parseInt(c1.text())+parseInt(c1.attr("data-id")));
+        c1.text(summa);
+        var sum_itog=document.getElementById("id_summa");
+        var sum_text=parseInt(sum_itog.innerHTML)+parseInt(c1.attr("data-id"));
+        sum_itog.innerHTML=sum_text;
+        var b=$(this).siblings(".count_items");
+        var a= (parseInt(b.text())+1);
+        b.text(a);
+        var b=$(this).siblings(".count_items");
+
     });
 
 
 
-    $("#target_minus").click(function () {
-        a = parseInt($('.count_items').text());
+    $(".target_minus").click(function () {
+        var c=$(this).parent().parent();
+        var c1=c.siblings(".items_price").find(".items_pric");
+        var summa=(parseInt(c1.text())-parseInt(c1.attr("data-id")));
+        c1.text(summa);
+        var sum_itog=document.getElementById("id_summa");
+        var sum_text=parseInt(sum_itog.innerHTML)-parseInt(c1.attr("data-id"));
 
-        if (a == 0)
-            $('.count_items').text(a);
+        var b=$(this).siblings(".count_items");
+        a = parseInt(b.text());
+        if (a == 1) {
+            b.text(a);
+            c1.text(parseInt(c1.attr("data-id")));
+        }
         else {
-            a = parseInt($('.count_items').text()) - 1;
-            $('.count_items').text(a);
+            a = parseInt(b.text()) - 1;
+           b.text(a);
+            sum_itog.innerHTML=sum_text;
         }
     });
 

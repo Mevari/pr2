@@ -10,20 +10,20 @@
     <div class="row order_row">
 
         <div class="col-lg-3 col-md-3 col-sm-6 photo_order_items">
-            <img src="<?php echo $value->Img;?>" alt="img_items">
+            <img src="/<?php echo $value->Img;?>" alt="img_items">
         </div>
         <div class="col-lg-3 col-md-3 items_order">
             <p><?php echo $value->Name;?></p>
         </div>
         <div class="col-lg-2 col-md-2 items_order">
-           <p>Количество:<br><br>
-                <a href="#" id="target_plus">
+           <p >Количество:<br><br>
+                <a href="#" class="target_plus">
                     <span class="glyphicon glyphicon-plus"  >
                     </span>
                 </a>
             <span class="count_items" > <?php echo $_SESSION['products'][$value->id]; ?> </span>
 
-                <a href="#" id="target_minus">
+                <a href="#" class="target_minus">
                     <span class="glyphicon glyphicon-minus" >
                     </span>
                 </a>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="col-lg-3 col-md-3 items_price">
-            <p>Стоимость:<br><br><span class="items_pric"><?php echo $value->Price*$_SESSION['products'][$value->id];?></span> BYN</p>
+            <p>Стоимость:<br><br><span class="items_pric" data-id="<?php echo $value->Price?>"><?php echo $value->Price*$_SESSION['products'][$value->id];?></span> BYN</p>
         </div>
         <div class="col-lg-1 col-md-1">
             <a href="/cart/delete_cart/<?php echo $value->id; ?>">
@@ -44,7 +44,7 @@
 <?php } } ?>
     <div class="row">
         <div class="line_summa">
-           <h5>Сумма: 1200 BYN</h5>
+           <h5>Сумма: <span id="id_summa"><?php echo $summa?></span> BYN</h5>
         </div>
     </div>
 </div>

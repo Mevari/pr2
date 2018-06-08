@@ -471,8 +471,23 @@ ul, il {
 {
     text-decoration: none;
 }
+.cart_add {
+    display: block;
+    margin: 0px auto;
+    font-size: 20px;
+}
+
+.items_title  {
+    display: block;
+    overflow:hidden;
+
+}
 
 
+.clear_basket
+{
+    color: #ffcc00;
+}
 .glyphicon-remove
 {
     color: red;

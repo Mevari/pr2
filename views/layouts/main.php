@@ -80,15 +80,18 @@ AppAsset::register($this);
                 <div id="tools">
                     <div id="shopCart" class="shop-cart" data-shopcart="1">
                         <div id="basket">
-                            <p class="h1"><i class="fa fa-shopping-cart"></i><a href="/cart"> Корзина</a> </p>
+                            <p class="h1"><i class="fa fa-shopping-cart"></i><a href="/cart"> Корзина</a></p>
                             <div class="empty">
                                 <span class="clear_basket">
-                                    <?php   if (isset($_SESSION['products'])) {
+                                    <?php if (isset($_SESSION['products'])) {
                                         $count = 0;
                                         foreach ($_SESSION['products'] as $id => $quantity) {
                                             $count = $count + $quantity;
                                         }
-                                        echo $count;
+                                        if ($count != 0)
+                                            echo $count;
+                                        else
+                                            echo "Ваша корзина пуста";
                                     } else {
                                         echo "Ваша корзина пуста";
                                     }

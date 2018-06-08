@@ -38,8 +38,8 @@ $this->title = 'Na_Divane';
         <div class="row title wow slideInLeft">
             <div class="col-lg-6 text_title">
                 <h1>Na_Divane.pl</h1>
-                <span class="btn btn-default cart_add"  data-id="1" >кнопка</span>
-                <span class="btn btn-default cart_add"  data-id="2" >кнопка</span>
+
+
                 <p>Вам необходим  велосипед , мотоцикл, чайник или любая другая электроника по очень доступной  цене?<br>
                     Все эти товары и не только  вы можете выбрать и приобрести в нашем  интернет-магазине, при этом сэкономите  много  времени  !
                     <br><br>Интернет-магазин <b><i>Na_Divane.pl</i></b> это ваш помощник в мире покупок .

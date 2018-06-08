@@ -406,7 +406,6 @@ ul, il {
     color: red;
 }
 
-
 .glyphicon-qrcode
 {
     font-size: 30px;
@@ -421,7 +420,6 @@ ul, il {
     color: #80888e;
     font-size: 15px;
 
-
 }
 .cart_title
 {
@@ -435,11 +433,9 @@ ul, il {
 }
 .photo_order_items img
 {
-    /*width: 100%;*/
     width: auto;
     max-width: 100%;
     height: inherit;
-
 }
 .line_summa
 {   height: 20px;

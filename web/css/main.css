@@ -491,6 +491,9 @@ ul, il {
 }
 .order_row
 {   margin-bottom: 20px;
+    border-style: none none solid none;
+    border-color: #eee;
+    border-width: 1px;
 }
 #basket a
 {
@@ -936,6 +939,10 @@ ul, il {
     .flexslider
     {
         margin-top: 20px !important;
+    }
+
+    .line_summa {
+        text-align: center;
     }
 }
 /*dsf*/

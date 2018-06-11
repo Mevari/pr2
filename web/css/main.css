@@ -950,6 +950,10 @@ ul, il {
 {
     height: 34px;
 }
+.ui-menu
+{
+    z-index: 1300 !important;
+}
 .search-form .form-group {
     float: right !important;
     transition: all 0.35s, border-radius 0s;

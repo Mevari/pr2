@@ -54,6 +54,8 @@ $config = [
                 'category/<id:\d+>/page/<page:\d+>' =>'category/index',
                 'category/page/<page:\d+>' =>'category/index',
                 'category/<id:\d+>' =>'category/index',
+                'item/<id:\d+>'=> 'category/item',
+
 
             ],
         ],

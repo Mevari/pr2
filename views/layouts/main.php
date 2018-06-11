@@ -9,7 +9,10 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\jui\AutoComplete;
 
+use app\models\Items;
+use yii\web\JsExpression;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -48,9 +51,23 @@ AppAsset::register($this);
             <div class="col-lg-10 col-md-12 col-sm-12  collapse navbar-collapse" id="navbarSupportedContent">
         <div class="col-lg-3 col-md-4 col-sm-12">
             <form action="" class="search-form">
+
                 <div class="form-group has-feedback">
-            		<label for="search" class="sr-only">Search</label>
-            		<input type="text" class="form-control" name="search" id="search" placeholder="">
+                    <? echo AutoComplete::widget([
+                        'name'=>'search',
+                        'options'=>[ 'class' => 'form-control','id'=>'search'],
+                        'clientOptions' => [
+                            'source' => ('search/autocomplete'),
+                            'minLength' => '3',
+                            'autoFill' => true,
+
+                            'select' =>new JsExpression("function(event, ui) {        
+                            window.location.href = ui.item.href;
+        }"),
+                        ] ]);
+                    ?>
+<!--            		<label for="search" class="sr-only">Search</label>-->
+<!--            		<input type="text" class="form-control" name="search" id="search" placeholder="">-->
               		<span class="glyphicon glyphicon-search form-control-feedback"></span>
             	</div>
             </form>

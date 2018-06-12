@@ -2,11 +2,9 @@
 /* @var $this yii\web\View */
 
 
-
-$this->title = 'Na_Divane';
-
-
 use yii\helpers\Html;
+use yii\helpers\Url;
+$this->title = 'Na_Divane';
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 ?>
@@ -56,19 +54,26 @@ use yii\captcha\Captcha;
 <section id="works" class="section">
     <div class="text_title2 wow fadeOut">Популярные товары</div>
     <div class="container-fluid">
-        <div class="row photo_gallery">  
-            <?php
-            foreach ($popular_items as $items) {
-                echo '<div class="col-lg-3 fadeIn "><a href="#"  >';
-                echo '<div class="imgCenter"><img src="' . $items->Img . '" alt="" class="img_p"></div>';
-                echo '<div class="items_opis">';
-                echo '<h5>' . $items->Name . '</h5>';
-                echo ' <p>' . $items->Price . ' BYN</p>';
-                echo '</div>
-                </a></div>';
-            }
-            ?>      
-        </div>
+        <?php foreach ($popular_items as $row): ?>
+            <div class="col-lg-3 col-sm-3">
+                <div class="item_catalog">
+                    <a href=<?= URL::to(['article/index', 'id' => $row['id']]); ?>>
+                        <div class="img_cont">
+                            <?= Html::img('/' . $row['Img']) ?>
+                        </div>
+                    </a>
+                    <div class="items_tit">
+                               <span class="items_title">
+                                   <a href="#">
+                                    <p><?= $row['Name'] ?></p>
+                                </a></span>
+                        <p class="price"><?= $row['Price'] . ' руб' ?></p>
+                        <i class="far fa-address-book"></i>
+                        <span class="btn btn-warning cart_add" data-id="<?= $row['id'] ?>">В корзину!</span>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
 <section class="section">

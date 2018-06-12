@@ -64,10 +64,18 @@ class SiteController extends Controller
     public function actionIndex()
     {
         session_start();
-
-        $popular_items = Items::find()->where(['popular' => 1])->all();
-        $discount_img= Discount::find()->indexBy('id')->all();
-        return $this->render('index',['popular_items'=>$popular_items,'discount_img'=>$discount_img]);
+        $get=Yii::$app->request->get('search');
+        if (isset($get))
+        {
+            $term = addcslashes(Yii::$app->request->get('search'), '%_'); //экранировать LIKE специальные символы
+            $model = Items::find()->where(['like', 'name', $term])->all();
+        return $this->render('search',['search_items'=>$model,'search'=>$term]);
+    }
+        else {
+            $popular_items = Items::find()->where(['popular' => 1])->all();
+            $discount_img = Discount::find()->indexBy('id')->all();
+            return $this->render('index', ['popular_items' => $popular_items, 'discount_img' => $discount_img]);
+        }
     }
 
     /**

@@ -18,7 +18,8 @@ class SearchController extends \yii\web\Controller
     {
 
 
-         //return $this->render('cart', ['cart_items' => $cart_items,'summa'=>$summa]);
+
+         return $this->render('seacrh', ['cart_items' => $model]);
     }
 
     public function actionAutocomplete() {

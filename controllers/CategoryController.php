@@ -99,10 +99,7 @@ class CategoryController extends Controller
             'model' => $model,
         ]);
     }
-    public function actionItem()
-    {
-       echo "fgdg";
-    }
+
     /**
      * Deletes an existing Category model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

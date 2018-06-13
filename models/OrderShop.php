@@ -3,56 +3,39 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
-/**
- * This is the model class for table "Order_shop".
- *
- * @property int $id
- * @property string $Date
- * @property string $Client_name
- * @property int $Phone
- * @property string $Adress
- * @property string $Email
- * @property string $Comment
- */
-class OrderShop extends \yii\db\ActiveRecord
+class OrderShop extends ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public static function tableName()
     {
         return 'Order_shop';
     }
-
-    /**
-     * {@inheritdoc}
-     */
+    public function getOrderItems(){
+        $this->hasMany(OrderItems::className(),['order_id' =>'id']);
+    }
     public function rules()
     {
         return [
             [['Date'], 'safe'],
             [['Client_name', 'Phone', 'Adress'], 'required'],
-            [['Phone'], 'integer'],
-            [['Client_name', 'Adress'], 'string', 'max' => 30],
-            [['Email'], 'string', 'max' => 20],
-            [['Comment'], 'string', 'max' => 50],
+            [['Status'],'boolean'],
+            [['Client_name'], 'string', 'max' => 30],
+            [['Email'], 'email'],
+            [['Comment', 'Adress'], 'string', 'max' => 255],
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
+
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'Date' => 'Date',
-            'Client_name' => 'Client Name',
-            'Phone' => 'Phone',
-            'Adress' => 'Adress',
+            'Client_name' => 'ФИО',
+            'Phone' => 'Телефон',
+            'Adress' => 'Адрес',
             'Email' => 'Email',
-            'Comment' => 'Comment',
+            'Comment' => 'Комментарий',
         ];
     }
 }

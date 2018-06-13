@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </a></span>
                                 <p class="price"><?= $row['Price'] . ' руб' ?></p>
                                 <i class="far fa-address-book"></i>
-                                <span class="btn btn-warning cart_add" data-id="<?= $row['id'] ?>">В корзину!</span>
+                                <span class="btn btn-warning cart_add"   data-id="<?= $row['id'] ?>">В корзину!</span>
                             </div>
                         </div>
                     </div>

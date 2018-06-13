@@ -2,9 +2,12 @@
 /* @var $this yii\web\View */
 
 
+$this->title = 'Na_Divane';
+
+
 use yii\helpers\Html;
 use yii\helpers\Url;
-$this->title = 'Na_Divane';
+
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 ?>

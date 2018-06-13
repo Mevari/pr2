@@ -59,7 +59,7 @@ class Cart
                 $productsInCart[$id]--;
             }
             // Если полное удаление из корзины
-            else {
+            elseif ($all){
                 unset($productsInCart[$id]);
             }
         }

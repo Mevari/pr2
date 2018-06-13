@@ -41,7 +41,7 @@ class CategoryController extends Controller
             $query->where(['id_category'=>$id]);
         }
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'PageSize'=>2,'forcePageParam'=>false,'pageSizeParam'=>false]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'PageSize'=>10,'forcePageParam'=>false,'pageSizeParam'=>false]);
 
         $models = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
 
@@ -50,6 +50,10 @@ class CategoryController extends Controller
             'Items' => $models,
             'pages' => $pages,
         ]);
+    }
+    public function actionItem($id=0)
+    {
+
     }
     /**
      * Displays a single Category model.

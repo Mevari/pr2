@@ -8,9 +8,10 @@ $this->title = 'Na_Divane';
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-
+use yii\bootstrap\Modal;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use app\components\FBFWidget;
 ?>
 
 <section>
@@ -37,7 +38,7 @@ use yii\captcha\Captcha;
         ?>
     </div>
 </section>
-
+<?= FBFWidget::widget([]) ?>
 <div class="container">
     <div class="FEATURES" id="features">
         <div class="row title wow slideInLeft">
@@ -133,7 +134,8 @@ use yii\captcha\Captcha;
     <div class="row block_up_footer" id="block_up_footer">
         <div class="col-md-12  text_center_footer">           
             <h5>Вы можете оставить свой номер и мы с вами свяжемся в ближайшее время!</h5>
-            <button type="button" class="btn buttom_red buttom_red_footer">Обратная связь</button>
+            <button type="button" class="btn buttom_red buttom_red_footer" data-toggle="modal" data-target="#myModal">Обратная связь</button>
         </div>
     </div>
+
 </div>

@@ -32,6 +32,8 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
+            'messageConfig' => [
+                'charset' => 'UTF-8'],
             'useFileTransport' => true,
         ],
         'log' => [
@@ -57,6 +59,7 @@ $config = [
                 'category/page/<page:\d+>' =>'category/index',
                 'category/<id:\d+>' =>'category/index',
                 'item/<id:\d+>'=> 'category/item',
+
 
 
             ],

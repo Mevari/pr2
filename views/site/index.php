@@ -8,12 +8,7 @@ $this->title = 'Na_Divane';
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-
-
-use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\bootstrap\Modal;
->>>>>>> rodya
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use app\components\FBFWidget;

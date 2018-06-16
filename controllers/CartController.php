@@ -54,35 +54,29 @@ class CartController extends Controller
         return $this->render('cart', ['cart_items' => $cart_items, 'summa' => $summa, 'order' => $order]);
     }
 
-    public function actionAdd($id = 0)
-    {
-        return Cart::addProduct($id);
+    public function actionAdd($id){
+//        $count = Yii::app()->request->getPost('count');
+//        var_dump($count);
+
+        $count = Yii::$app->request->post('count');
+        $count = intval($count);
+        return Cart::addProduct($id,$count);
     }
 
-
+// умеьшает количество товара в корзине на 1
     public function actionDelete_product($id)
     {
         return Cart::DeleteProduct($id);
     }
 
+
+//удаляет полностью из корзины и обновяет страницу. // В одну и без перезагрузки//
     public function actionDelete_cart($id)
     {
 
         Cart::DeleteProduct($id,true);
         $this->redirect(array('cart/index'));
-//        $session =Yii::$app->session;
-//        $products = $session['products'];
-//        if (isset($products)) {
-//            foreach ($products as $id_items => $product) {
-//                if ($id_items == $id) {
-//                    unset($products[$id]);
-//                    $this->redirect(array('cart/index'));
-//                    break;
-//                }
-//            }
-//            $session->set('products', $products);
-//        } else
-//            return ;
+
     }
 
     // vs add order items

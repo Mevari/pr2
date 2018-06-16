@@ -25,7 +25,8 @@ class AppAsset extends AssetBundle
         'css/animate.min.css',
         'css/flexslider.css',
         'css/jquery.fancybox.css',
-        'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
+//        'css/font-icons.css',
+        "https://use.fontawesome.com/releases/v5.0.13/css/all.css",
     ];
     public $js = [
         'js/bootstrap.min.js',
@@ -36,6 +37,9 @@ class AppAsset extends AssetBundle
         'js/main.js',
         'js/wow.min.js',
         'js/jquery.mask.js',
+//        'js/jquery.accordion.js',
+//        'js/jquery.cookie.js',
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

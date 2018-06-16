@@ -21,6 +21,7 @@ class OrderShop extends ActiveRecord
             [['Date'], 'safe'],
             [['Client_name', 'Phone', 'Adress'], 'required'],
             [['Status'],'boolean'],
+            ['Phone', 'match', 'pattern' => '/^\+375\s\([0-9]{2}\)\s[0-9]{3}\-[0-9]{2}\-[0-9]{2}$/', 'message' => 'Вы ввели неверный формат номера' ],
             [['Client_name'], 'string', 'max' => 30],
             [['Email'], 'email'],
             [['Comment', 'Adress'], 'string', 'max' => 255],

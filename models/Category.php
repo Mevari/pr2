@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 
+
 /**
  * This is the model class for table "Category".
  *
@@ -44,5 +45,9 @@ class Category extends \yii\db\ActiveRecord
             'image' => 'Image',
              'parent_id' => 'Parent_id',
         ];
+    }
+    public function getItems()
+    {
+        return $this->hasMany(Items::className(), ['id_Category' => 'id']);
     }
 }

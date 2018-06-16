@@ -36,13 +36,18 @@ $this->title = 'Корзина';
 
 <?php if (isset($cart_items)) {
     foreach ($cart_items as $value) { ?>
-        <div class="row order_row" item-id = <?= $value['id']?>>
+        <div class="row order_row" item-id= <?= $value['id'] ?>>
 
-            <div class="col-lg-3 col-md-3 col-sm-4 photo_order_items" >
-                <img src="/<?php echo $value['Img']; ?>" alt="img_items">
+            <div class="col-lg-3 col-md-3 col-sm-4 photo_order_items">
+                <a href=<?= URL::to(['items/index', 'id' => $value['id']]); ?>>
+                    <?= Html::img(Url::to([$value['Img']])); ?>
+                </a>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 items_order">
-                <p><?php echo $value['Name']; ?></p>
+                <a href=<?= URL::to(['items/index', 'id' => $value['id']]); ?>>
+
+                    <p><?= $value['Name']; ?></p>
+                </a>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-4 items_order">
                 <p>Количество:<br><br>
@@ -50,7 +55,7 @@ $this->title = 'Корзина';
                     <span class="glyphicon glyphicon-plus">
                     </span>
                     </a>
-                    <span class="count_items"> <?php echo $value['count']; ?> </span>
+                    <span class="count_items"> <?= $value['count']; ?> </span>
 
                     <a href="#" class="target_minus">
                     <span class="glyphicon glyphicon-minus">
@@ -72,21 +77,23 @@ $this->title = 'Корзина';
         </div>
     <?php }
 } ?>
-    <div class="row">
-        <div class="col-sm-12 line_summa">
-            <h5>Сумма: <span id="id_summa"><?=$summa ?></span> BYN</h5>
-        </div>
+<div class="row">
+    <div class="col-sm-12 line_summa">
+        <h5>Сумма: <span id="id_summa"><?= $summa ?></span> BYN</h5>
     </div>
+</div>
 </div>
 <div class="container info_user">
     <div class="cart_info">
         <?php $form = ActiveForm::begin() ?>
-        <?= $form->field($order, 'Client_name') ->textInput(array('placeholder' => 'Ваше имя'))?>
-        <?= $form->field($order, 'Phone') ?>
+        <?= $form->field($order, 'Client_name')->textInput(array('placeholder' => 'Ваше имя')) ?>
+        <?= $form->field($order, 'Phone')->widget(\yii\widgets\MaskedInput::className(), [
+            'mask' => '+375 (99) 999-99-99',
+        ]) ?>
         <?= $form->field($order, 'Adress') ?>
         <?= $form->field($order, 'Email') ?>
         <?= $form->field($order, 'Comment') ?>
-        <?=Html::submitButton('Оформить заказ',['class'=>'btn btn-primary']);?>
+        <?= Html::submitButton('Оформить заказ', ['class' => 'btn btn-primary']); ?>
         <?php ActiveForm::end() ?>
     </div>
 </div>

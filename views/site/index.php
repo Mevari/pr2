@@ -57,19 +57,21 @@ use yii\captcha\Captcha;
         <?php foreach ($popular_items as $row): ?>
             <div class="col-lg-3 col-sm-3">
                 <div class="item_catalog">
-                    <a href=<?= URL::to(['article/index', 'id' => $row['id']]); ?>>
+                    <a href=<?= URL::to(['items/index', 'id' => $row['id']]); ?>>
                         <div class="img_cont">
-                            <?= Html::img('/' . $row['Img']) ?>
+                            <?= Html::img(URL::to([$row['Img']])) ?>
                         </div>
                     </a>
                     <div class="items_tit">
                                <span class="items_title">
-                                   <a href="#">
+                                   <a href=<?=URL::to(['items/index', 'id' => $row['id']])?>>
                                     <p><?= $row['Name'] ?></p>
                                 </a></span>
                         <p class="price"><?= $row['Price'] . ' руб' ?></p>
-                        <i class="far fa-address-book"></i>
-                        <span class="btn btn-warning cart_add" data-id="<?= $row['id'] ?>">В корзину!</span>
+                        <span class="btn btn-warning cart_add" data-id="<?= $row['id'] ?>">
+                           <i class="fas fa-shopping-cart"></i>
+                            В корзину!
+                        </span>
                     </div>
                 </div>
             </div>

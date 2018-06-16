@@ -5,6 +5,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'language' => 'Ru-ru',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -31,6 +32,8 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
+            'messageConfig' => [
+                'charset' => 'UTF-8'],
             'useFileTransport' => true,
         ],
         'log' => [
@@ -50,11 +53,13 @@ $config = [
             'rules' => [
                 'cart/add'=>'cart/add',
                 'cart/add/<id:\d+>'=>'cart/add',
+                'cart/delete_product/<id:\d+>'=>'cart/delete_product',
                 'cart/delete_cart/<id:\d+>'=>'cart/delete_cart',
                 'category/<id:\d+>/page/<page:\d+>' =>'category/index',
                 'category/page/<page:\d+>' =>'category/index',
                 'category/<id:\d+>' =>'category/index',
                 'item/<id:\d+>'=> 'category/item',
+                'shop'=>'site/shop',
 
 
             ],

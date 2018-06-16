@@ -24,31 +24,15 @@ $(document).ready(function(){
     //    });
     //     return false;
     // });
-    $(".cart_add").click(function () {
-
-        var id = $(this).attr("data-id");
-        $.ajax({
-            url: '/cart/add/'+id,
-            dataType: 'text',
-
-            data: { _csrf: yii.getCsrfToken()},
-            type: 'POST',
-
-            async: false,
-            success:
-                function (data) {
-                    $(".clear_basket").html(data);
-                },
-            error:
-                function (data) {
-                    alert('Ошибка запроса');
-                }
-        });
-    });
 
 
 
-    $('input[name="phone"]').attr('placeholder', '+375 (00) 000-00-00').inputmask('+375 (99) 999-99-99');
+
+
+
+
+
+    $('#ordershop-phone').attr('placeholder', '').inputmask('+375 (99) 999-99-99');
 
     $( ".target_plus" ).click(function() {
         var c=$(this).parent().parent();
@@ -110,10 +94,24 @@ $(document).ready(function(){
     });
  new WOW().init();
                 
- $('.flexslider').flexslider({
-        animation: "slide"
-    });
+ $('#slider_shop').flexslider({
+        animation: "slide",
+     controlNav: 'thumbnails',
 
+     directionNav: true,
+     prevText: "",
+     nextText: "",
+
+ });
+    $('#slider_index').flexslider({
+        animation: "slide",
+        controlNav: true,
+
+        directionNav: true,
+        prevText: "",
+        nextText: "",
+
+    });
   $(".work-box").fancybox({  });
 
 
@@ -158,7 +156,70 @@ $(document).ready(function(){
 
 
     });
+
+
 });
+
+function add_cart(id) {
+    $.ajax({
+        url: '/cart/add/'+id,
+        dataType: 'text',
+
+        data: { },
+        type: 'POST',
+
+        async: false,
+        success:
+            function (data) {
+                $(".clear_basket").html(data);
+            },
+        error:
+            function (data) {
+                alert('Ошибка запроса');
+            }
+    });
+}
+function delete_cart(id) {
+    $.ajax({
+        url: '/cart/delete_product/'+id,
+        dataType: 'text',
+
+        data: { },
+        type: 'POST',
+
+        async: false,
+        success:
+            function (data) {
+                $(".clear_basket").html(data);
+            },
+        error:
+            function (data) {
+                alert('Ошибка запроса');
+            }
+    });
+}
+
+
+function AddFromCategory() {
+    var id = $(this).attr("data-id");
+    add_cart(id);
+}
+
+function AddFromCart() {
+   var el =  $(this).parents(':eq(2)');
+   var id = el.attr("item-id");
+   add_cart(id);
+}
+function DeleteFromCart() {
+    var el =  $(this).parents(':eq(2)');
+    var id = el.attr("item-id");
+    delete_cart(id);
+}
+
+
+$(".cart_add").click(AddFromCategory);
+$('.target_plus').click(AddFromCart);
+$('.target_minus').click(DeleteFromCart);
 
 
 

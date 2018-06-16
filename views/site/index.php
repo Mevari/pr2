@@ -8,35 +8,37 @@ $this->title = 'Na_Divane';
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+
+
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\bootstrap\Modal;
+>>>>>>> rodya
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use app\components\FBFWidget;
 ?>
 
 <section>
-    <div class="container-fluid ">
-        <?php
-        if (!empty($discount_img)) {
-            echo' <div class="flexslider">
-            <ul class="slides">';
-            foreach ($discount_img as $items) 
-                {
-                echo ' <li>
+    <div class="container">
+                <div id ="slider_index" class="flexslider">
+            <ul class="slides">
+                <?php foreach ($discount_img as $elem):?>
+                    <li>
                     <div class="row nopadding">
                         <div class ="col-12 nopadding">
-                            <div>
-                                <img src="' . $items->img . '" />
-                            </div>
+
+                               <?= Html::img('/' . $elem['img']) ?>
+
                         </div>
                     </div>                
-                </li> ';
-            }
-            echo '  </ul>
-        </div>';
-        }
-        ?>
+                </li>
+                 <?php endforeach; ?>
+             </ul>
+        </div>
     </div>
 </section>
-
+<?= FBFWidget::widget([]) ?>
 <div class="container">
     <div class="FEATURES" id="features">
         <div class="row title wow slideInLeft">
@@ -56,7 +58,7 @@ use yii\captcha\Captcha;
 </div>
 <section id="works" class="section">
     <div class="text_title2 wow fadeOut">Популярные товары</div>
-    <div class="container-fluid">
+    <div class="container">
         <?php foreach ($popular_items as $row): ?>
             <div class="col-lg-3 col-sm-3">
                 <div class="item_catalog">
@@ -132,7 +134,8 @@ use yii\captcha\Captcha;
     <div class="row block_up_footer" id="block_up_footer">
         <div class="col-md-12  text_center_footer">           
             <h5>Вы можете оставить свой номер и мы с вами свяжемся в ближайшее время!</h5>
-            <button type="button" class="btn buttom_red buttom_red_footer">Обратная связь</button>
+            <button type="button" class="btn buttom_red buttom_red_footer" data-toggle="modal" data-target="#myModal">Обратная связь</button>
         </div>
     </div>
+
 </div>

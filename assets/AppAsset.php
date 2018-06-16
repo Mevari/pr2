@@ -32,10 +32,12 @@ class AppAsset extends AssetBundle
 //        'js/jquery-3.3.1.min.js',
         'js/jquery.fancybox.js',
         'js/jquery.fancybox.pack.js',
-        'js/jquery.flexslider-min.js',
+        'js/jquery.flexslider.js',
         'js/main.js',
         'js/wow.min.js',
         'js/jquery.mask.js',
+//        'js/jquery.easing.1.3.js',
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

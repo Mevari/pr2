@@ -90,7 +90,7 @@ AppAsset::register($this);
                             <a href="/category/index" class="nav-link">Товары</a>
                         </li>
                         <li class="nav-item ">
-                            <a href="#author_block" class="nav-link">О магазине</a>
+                            <a href="/shop" class="nav-link">О магазине</a>
                         </li>
                         <li class="nav-item ">
                             <a href="#works" class="nav-link">Доставка</a>

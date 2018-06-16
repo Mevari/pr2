@@ -15,27 +15,22 @@ use app\components\FBFWidget;
 ?>
 
 <section>
-    <div class="container-fluid ">
-        <?php
-        if (!empty($discount_img)) {
-            echo' <div class="flexslider">
-            <ul class="slides">';
-            foreach ($discount_img as $items) 
-                {
-                echo ' <li>
+    <div class="container">
+                <div id ="slider_index" class="flexslider">
+            <ul class="slides">
+                <?php foreach ($discount_img as $elem):?>
+                    <li>
                     <div class="row nopadding">
                         <div class ="col-12 nopadding">
-                            <div>
-                                <img src="' . $items->img . '" />
-                            </div>
+
+                               <?= Html::img('/' . $elem['img']) ?>
+
                         </div>
                     </div>                
-                </li> ';
-            }
-            echo '  </ul>
-        </div>';
-        }
-        ?>
+                </li>
+                 <?php endforeach; ?>
+             </ul>
+        </div>
     </div>
 </section>
 <?= FBFWidget::widget([]) ?>
@@ -58,7 +53,7 @@ use app\components\FBFWidget;
 </div>
 <section id="works" class="section">
     <div class="text_title2 wow fadeOut">Популярные товары</div>
-    <div class="container-fluid">
+    <div class="container">
         <?php foreach ($popular_items as $row): ?>
             <div class="col-lg-3 col-sm-3">
                 <div class="item_catalog">

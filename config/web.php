@@ -59,7 +59,7 @@ $config = [
                 'category/page/<page:\d+>' =>'category/index',
                 'category/<id:\d+>' =>'category/index',
                 'item/<id:\d+>'=> 'category/item',
-
+                'shop'=>'site/shop',
 
 
             ],

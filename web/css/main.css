@@ -1006,7 +1006,10 @@ ul, il {
     font-size: 14px;
 }
 
-
+.shop_info
+{
+    margin: 40px 0px;
+}
 
 
 /*VS category*/
@@ -1138,3 +1141,57 @@ ul, il {
 
 
 /*end VS*/
+
+.flex-caption {
+    background-color:gray;
+    bottom: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    left: 0;
+    line-height: 18px;
+    padding: 2%;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    width: 96%;
+    opacity:0.6;
+    margin:-35px 0 0 0;
+}
+.flex-control-thumbs img{
+    width:100px !important;
+}
+
+#carousel img {
+    opacity:0.5;
+}
+
+#carousel img:hover{
+    opacity:1;
+}
+.flex-active-slide img{
+    opacity:1 !important;
+}
+.shop_title
+{
+    text-align: center;
+    font-size: 40px;
+    color: #2d3033;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+#map
+{
+    margin-bottom: 30px;
+}
+.shop_info {
+    font-size: 15px;
+    color: #2d3033;
+}
+.shop_info h2
+{
+    text-align: center;
+}
+#slider_shop
+{
+    width: 40%;
+}

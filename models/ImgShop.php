@@ -5,20 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "Discount".
+ * This is the model class for table "Img_shop".
  *
  * @property int $id
  * @property string $img
+ * @property int $discount
  * @property string $Date
  */
-class Discount extends \yii\db\ActiveRecord
+class ImgShop extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'Discount';
+        return 'Img_shop';
     }
 
     /**
@@ -28,6 +29,7 @@ class Discount extends \yii\db\ActiveRecord
     {
         return [
             [['img'], 'required'],
+            [['discount'], 'integer'],
             [['Date'], 'safe'],
             [['img'], 'string', 'max' => 250],
         ];
@@ -41,6 +43,7 @@ class Discount extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'img' => 'Img',
+            'discount' => 'Discount',
             'Date' => 'Date',
         ];
     }

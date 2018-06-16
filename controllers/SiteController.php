@@ -10,7 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Items;
-use app\models\Discount;
+use app\models\ImgShop;
 use app\components\FBFWidget;
 class SiteController extends Controller
 {
@@ -73,7 +73,7 @@ class SiteController extends Controller
     }
         else {
             $popular_items = Items::find()->where(['popular' => 1])->all();
-            $discount_img = Discount::find()->indexBy('id')->all();
+            $discount_img = ImgShop::find()->indexBy('id')->where(['discount'=>1])->all();
             return $this->render('index', ['popular_items' => $popular_items, 'discount_img' => $discount_img]);
         }
     }
@@ -131,14 +131,10 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+public function actionShop()
+{
+    $shop_img = ImgShop::find()->indexBy('id')->where(['discount'=>0])->all();
+    return $this->render('shop',['shop_imge'=>$shop_img]);
+}
 
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }

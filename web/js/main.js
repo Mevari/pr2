@@ -94,16 +94,24 @@ $(document).ready(function(){
     });
  new WOW().init();
                 
- $('.flexslider').flexslider({
+ $('#slider_shop').flexslider({
         animation: "slide",
-     controlNav: false,
+     controlNav: 'thumbnails',
 
      directionNav: true,
      prevText: "",
      nextText: "",
 
  });
+    $('#slider_index').flexslider({
+        animation: "slide",
+        controlNav: true,
 
+        directionNav: true,
+        prevText: "",
+        nextText: "",
+
+    });
   $(".work-box").fancybox({  });
 
 

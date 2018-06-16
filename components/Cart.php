@@ -8,7 +8,7 @@ class Cart
      * @param int $id <p>id товара</p>
      * @return integer <p>Количество товаров в корзине</p>
      */
-    public static function addProduct($id)
+    public static function addProduct($id,$count)
     {
         // Приводим $id к типу integer
         $id = intval($id);
@@ -22,7 +22,7 @@ class Cart
         // Проверяем есть ли уже такой товар в корзине
         if (array_key_exists($id, $productsInCart)) {
             // Если такой товар есть в корзине, но был добавлен еще раз, увеличим количество на 1
-            $productsInCart[$id]++;
+            $productsInCart[$id]+= $count;
         } else {
             // Если нет, добавляем id нового товара в корзину с количеством 1
 

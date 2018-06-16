@@ -23,12 +23,15 @@ class MenuWidget extends Widget
     protected $tree;
     protected $data;
     protected $html;
+    protected $ActiveId;
 
     public function run()
     {
 //
 //        $menu = Yii::$app->cache->get('menu');
 //        If ($menu) return $menu;
+        $request = Yii::$app->request;
+        $this->ActiveId = $request->get('id');
         $this->data = $this->GetCategory();
         $this->tree = $this->getTree();
 
@@ -80,14 +83,30 @@ class MenuWidget extends Widget
     {
 
         $html = '';
-        $html .= '<li data_id='.$cat['id']. '>';
-        If ($cat['parent_id'] == '0') {
 
-        $html .= '<div class="link">' . $cat['Name'] . '<i class="fa fa-chevron-down"></i></div>';
-    }
-        else{
-            $html .='<a href='. Url::to(['category/index', 'id' => $cat['id']]) . '>'. $cat['Name'] . '</a>';
-            }
+        $id = $this->ActiveId;
+
+        if (IsSet($id) && $cat['parent_id'] == '0' && $cat['childs'] && array_key_exists($id,$cat['childs']))
+        {
+            $html .= '<li class = open>';
+        }
+        elseif ($cat['id']==$id)
+        {
+            $html .= '<li class = ActiveMenu>';
+        }
+        else
+        {
+            $html .= '<li >';
+        }
+
+
+
+        If ($cat['parent_id'] == '0') {
+            $html .= '<div class="link">' . $cat['Name'] . '<i class="fa fa-chevron-down"></i></div>';
+        }
+        else {
+            $html .= '<a href=' . Url::to(['category/index', 'id' => $cat['id']]) . '>' . $cat['Name'] . '</a>';
+        }
 
         if ($cat['childs']) {
 
@@ -95,7 +114,7 @@ class MenuWidget extends Widget
             $html .= $this->GenerateMenu($cat['childs']);
             $html .= '</ul>';
         }
-        $html .='</li>';
+        $html .= '</li>';
         return $html;
     }
 

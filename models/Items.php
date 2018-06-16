@@ -59,4 +59,8 @@ class Items extends \yii\db\ActiveRecord
             'Date' => 'Date',
         ];
     }
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'id_Category']);
+    }
 }

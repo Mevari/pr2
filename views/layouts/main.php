@@ -10,7 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\jui\AutoComplete;
-use app\models\Items;
+use yii\helpers\Url;
 use yii\web\JsExpression;
 use yii\widgets\ActiveForm;
 
@@ -38,9 +38,9 @@ AppAsset::register($this);
     <div class="row header">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
             <div class="col-lg-2 col-md-11 col-sm-12 navbar-brand">
-                <div class="col-lg-12 col-md-12 col-sm-12 logo">
-                    <img src="/img/logo.png" alt="logo">
-                </div>
+                <a href =<?=Url::to(['/']);?> class="col-lg-12 col-md-12 col-sm-12 logo">
+                   <img src="/img/logo.png" alt="logo" >
+                </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent"

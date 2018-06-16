@@ -36,7 +36,6 @@ use app\components\FBFWidget;
         </div>
     </div>
 </section>
-<?= FBFWidget::widget([]) ?>
 <div class="container">
     <div class="FEATURES" id="features">
         <div class="row title wow slideInLeft">
@@ -81,6 +80,10 @@ use app\components\FBFWidget;
         <?php endforeach; ?>
     </div>
 </section>
+<?=
+$this->render('/widget/fbfWidget.php', [
+    'model' => $model,
+]);?>
 <section class="section">
   
     <div class="container">

@@ -13,21 +13,19 @@ $this->title = 'Поиск';
                     <?php foreach ($search_items as $row): ?>
                         <div class="col-lg-3 col-sm-3">
                             <div class="item_catalog">
-                                <a href=<?= URL::to(['items/index', 'id' => $row['id']]); ?>>
+                                <a href=<?= URL::to(['article/index', 'id' => $row['id']]); ?>>
                                     <div class="img_cont">
-                                        <?= Html::img(URL::to([$row['Img']])) ?>
+                                        <?= Html::img('/' . $row['Img']) ?>
                                     </div>
                                 </a>
                                 <div class="items_tit">
-                               <span class="items_title">
-                                   <a href=<?=URL::to(['items/index', 'id' => $row['id']])?>>
-                                    <p><?= $row['Name'] ?></p>
-                                </a></span>
+                                   <span class="items_title">
+                                       <a href="#">
+                                        <p><?= $row['Name'] ?></p>
+                                    </a></span>
                                     <p class="price"><?= $row['Price'] . ' руб' ?></p>
-                                    <span class="btn btn-warning cart_add" data-id="<?= $row['id'] ?>">
-                           <i class="fas fa-shopping-cart"></i>
-                            В корзину!
-                        </span>
+                                    <i class="far fa-address-book"></i>
+                                    <span class="btn btn-warning cart_add" data-id="<?= $row['id'] ?>">В корзину!</span>
                                 </div>
                             </div>
                         </div>

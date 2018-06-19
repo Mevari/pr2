@@ -7,11 +7,6 @@ $config = [
     'basePath' => dirname(__DIR__),
     'language' => 'Ru-ru',
     'bootstrap' => ['log'],
-    'modules' => ['admin' =>
-        ['class' => 'app\modules\admin\Module',
-            'layout' => 'main']
-
-    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',

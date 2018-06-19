@@ -26,7 +26,7 @@ class Cart
         } else {
             // Если нет, добавляем id нового товара в корзину с количеством 1
 
-            $productsInCart[$id] = $count;
+            $productsInCart[$id] = 1;
         }
 
         // Записываем массив с товарами в сессию

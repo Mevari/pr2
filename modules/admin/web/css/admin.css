@@ -3,3 +3,10 @@
     right: 43px !important;
     
 }
+td.details-control {
+    background: url('/modules/admin/web/img/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('/modules/admin/web/img/details_close.png') no-repeat center center;
+}

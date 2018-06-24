@@ -15,10 +15,16 @@ class OrderItems extends ActiveRecord
     }
 
     public function getOrder(){
-        $this->hasOne(OrderShop::className(),['id' =>'order_id']);
+        return $this->hasOne(OrderShop::className(),['id' =>'order_id']);
     }
 
-    public function rules()
+
+    public function getItem(){
+       return $this->hasOne(Items::className(),['id' =>'id_item']);
+    }
+
+
+        public function rules()
     {
         return [
             [['id_order', 'id_item', 'Price', 'Count', 'Summa'], 'required'],
@@ -26,5 +32,10 @@ class OrderItems extends ActiveRecord
             [['Price', 'Summa'], 'number'],
         ];
     }
-
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['item']='item';
+        return $fields;
+    }
 }

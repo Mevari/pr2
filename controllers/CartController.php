@@ -17,6 +17,7 @@ class CartController extends Controller
 {
     public function actionIndex()
     {
+
         $cart_items = null;
         $summa = 0;
         $id_item = array();

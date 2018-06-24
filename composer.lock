@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f14b1512073ff23488173a47f994813",
+    "content-hash": "bfa599852cbadef07f837173e1212ed3",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -65,6 +65,51 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.1,<4.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/datatables",
+            "version": "1.10.16",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:DataTables/DataTables.git",
+                "reference": "75a665f64f02982c0f4666b15a25c4670e5e6b18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/DataTables/zipball/75a665f64f02982c0f4666b15a25c4670e5e6b18",
+                "reference": "75a665f64f02982c0f4666b15a25c4670e5e6b18",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/datatables-plugins",
+            "version": "1.10.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/Plugins.git",
+                "reference": "46e6749a06a8ec543c0ba4283e86f0b8d54f2a33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/Plugins/zipball/46e6749a06a8ec543c0ba4283e86f0b8d54f2a33",
+                "reference": "46e6749a06a8ec543c0ba4283e86f0b8d54f2a33",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/datatables": ">=1.10.15",
+                "bower-asset/jquery": ">=1.7.0"
             },
             "type": "bower-asset",
             "license": [
@@ -549,6 +594,59 @@
                 "icon"
             ],
             "time": "2016-10-24T15:52:54+00:00"
+        },
+        {
+            "name": "nullref/yii2-datatables",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NullRefExcep/yii2-datatables.git",
+                "reference": "f0a41a177ea6043b3e02f942d327d677bebdfa8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NullRefExcep/yii2-datatables/zipball/f0a41a177ea6043b3e02f942d327d677bebdfa8e",
+                "reference": "f0a41a177ea6043b3e02f942d327d677bebdfa8e",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/datatables": "~1.10.15",
+                "bower-asset/datatables-plugins": "~1.10.15",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "~2.0.13"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "nullref\\datatable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serhiy Vinichuk",
+                    "email": "serhiyvinichuk@gmail.com"
+                },
+                {
+                    "name": "Dmytro Karpovych",
+                    "email": "zayec77@gmail.com"
+                }
+            ],
+            "description": "Yii2 Extension for DataTables jQuery plug-in",
+            "homepage": "https://github.com/NullRefExcep/yii2-datatables",
+            "keywords": [
+                "datatable",
+                "datatables",
+                "jquery",
+                "plugin",
+                "widget",
+                "yii",
+                "yii2"
+            ],
+            "time": "2018-04-03T10:55:48+00:00"
         },
         {
             "name": "rmrevin/yii2-fontawesome",

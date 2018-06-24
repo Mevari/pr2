@@ -17,10 +17,11 @@ use yii\web\AssetBundle;
  */
 class admin_Asset extends AssetBundle
 {
+//    public $sourcePath = '@vendor/almasaeed2010/adminlte/bower_components/datatables.net-bs';
     public $sourcePath = '@app/modules/admin/web';
 //    public $baseUrl = '@web';
     public $css = [
-        'css/admin.css',
+    'css/admin.css'
 
     ];
 
@@ -29,6 +30,7 @@ class admin_Asset extends AssetBundle
 
     ];
     public $depends = [
+        'dmstr\web\AdminLteAsset',
 //        'yii\web\YiiAsset',
 //        'yii\bootstrap\BootstrapAsset',
     ];

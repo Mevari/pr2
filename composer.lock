@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f14b1512073ff23488173a47f994813",
+    "content-hash": "ee93e9e2e39215b1207a9b49b40fd074",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -965,6 +965,51 @@
                 "yii2"
             ],
             "time": "2017-05-01T08:29:00+00:00"
+        },
+        {
+            "name": "zertex/yii2-gridview-pagesize-widget",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zertex/yii2-gridview-pagesize-widget.git",
+                "reference": "43faf6e79a58df44d92668ecf560145106c7807f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zertex/yii2-gridview-pagesize-widget/zipball/43faf6e79a58df44d92668ecf560145106c7807f",
+                "reference": "43faf6e79a58df44d92668ecf560145106c7807f",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "zertex\\gridpagesize\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zertex",
+                    "email": "info@zertex.ru",
+                    "homepage": "http://zertex.ru"
+                }
+            ],
+            "description": "Widget for enabling dynamic page size selection on GridView",
+            "homepage": "https://github.com/zertex/yii2-gridview-pagesize-widget",
+            "keywords": [
+                "extension",
+                "grid-view",
+                "page-size",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-12-18T17:17:15+00:00"
         }
     ],
     "packages-dev": [

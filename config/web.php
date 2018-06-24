@@ -67,6 +67,7 @@ $config = [
                 'shop'=>'site/shop',
                 'item/<id:\d+>'=> 'items/index',
                 'admin/admin_items'=>'admin/default/admin_items',
+
             ],
         ],
     ],

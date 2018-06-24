@@ -4,6 +4,7 @@ namespace app\modules\admin\models;
 
 use Yii;
 use app\modules\admin\models\Category;
+
 /**
  * This is the model class for table "Items".
  *
@@ -39,7 +40,10 @@ class Items extends \yii\db\ActiveRecord
             [['Price'], 'number'],
             [['popular', 'id_Category'], 'integer'],
             [['Date'], 'safe'],
-            [['Name', 'Img'], 'string', 'max' => 50],
+            [['Name'], 'string', 'max' => 50],
+//            [['Name', 'Img'], 'string', 'max' => 50],
+            [['Img'],'required','on'=>'update-image'],
+          [['Img'],'file','extensions'=>'png,jpg,gif'],
             [['Description'], 'string', 'max' => 120],
         ];
     }

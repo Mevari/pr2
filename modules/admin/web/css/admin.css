@@ -60,38 +60,38 @@
     border-spacing: 0;
     text-align: center;
 }
-th {
+.items_table th {
     background: #BCEBDD;
     color: white;
     text-shadow: 0 1px 1px #2D2020;
     padding: 10px 20px;
 }
-th, td {
-    font-size: 19px;
+.items_table th,.items_table td {
+    /*font-size: 19px;*/
     border-style: solid;
     border-width: 0 1px 1px 0;
     border-color: white;
 }
-th:first-child, td:first-child {
+.items_table th:first-child,.items_table td:first-child {
     text-align: left;
 }
-th:first-child {
+.items_table th:first-child {
     border-top-left-radius: 10px;
 }
-th:last-child {
+.items_table th:last-child {
     border-top-right-radius: 10px;
     border-right: none;
 }
-td {
+.items_table td {
     padding: 10px 20px;
     background: #F8E391;
 }
-tr:last-child td:first-child {
+.items_table tr:last-child  td:first-child {
     border-radius: 0 0 0 10px;
 }
-tr:last-child td:last-child {
+.items_table tr:last-child  td:last-child {
     border-radius: 0 0 10px 0;
 }
-tr td:last-child {
+.items_table tr td:last-child {
     border-right: none;
 }

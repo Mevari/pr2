@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\Category;
 use Yii;
 use app\modules\admin\models\Items;
 use app\modules\admin\models\ItemsSearch;
@@ -9,15 +10,15 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
+use yii\web\Response;
+use yii\web\UploadedFile;
+use yii\widgets\ActiveForm;
 
-/**
- * ItemsController implements the CRUD actions for Items model.
- */
 class ItemsController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
+    public $mas = array();
+
     public function behaviors()
     {
         return [
@@ -30,13 +31,9 @@ class ItemsController extends Controller
         ];
     }
 
-    /**
-     * Lists all Items models.
-     * @return mixed
-     */
+
     public function actionIndex()
     {
-
 
         $searchModel = new ItemsSearch();
 //        $dataProvider = new ActiveDataProvider([
@@ -45,24 +42,13 @@ class ItemsController extends Controller
 //                'pageSize'=>8,
 //            ]
 //        ]);
-      $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-
-
-
-
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'searchModel' => $searchModel,
         ]);
     }
 
-    /**
-     * Displays a single Items model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -70,51 +56,88 @@ class ItemsController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new Items model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
     public function actionCreate()
     {
         $model = new Items();
+        $model_cat = new Category();
+        $result = $model_cat->get_cat();
+        if ($model->load(Yii::$app->request->post())) {
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+            $image = UploadedFile::getInstance($model, 'Img');
+            $model->Img = 'web/img/' . $image->BaseName . '.' . $image->extension;
+            if ($model->save()) {
+                $image->saveAs('img/' . $image->BaseName . '.' . $image->extension);
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+
 
         return $this->render('create', [
             'model' => $model,
+            'mas' => $result,
         ]);
     }
 
-    /**
-     * Updates an existing Items model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+//    public function actionUpdate($id)
+////    {
+////        $model = $this->findModel($id);
+//////        $model->scenario = 'update-image';
+////        if ($model->load(Yii::$app->request->post())) {
+////            $image = UploadedFile::getInstance($model, 'Img');
+////            if ($image!=Null) {
+////                $model->Img = 'web/img/' . $image->BaseName . '.' . $image->extension;
+////                if ($model->save()) {
+////                    $image->saveAs('img/' . $image->BaseName . '.' . $image->extension);
+////                    return $this->redirect(['view', 'id' => $model->id]);
+////                }
+////            }
+////            else
+////
+////                return $this->redirect(['view', 'id' => $model->id]);
+////        }
+////else
+////        return $this->render('update', [
+////            'model' => $model,
+////        ]);
+////    }
     public function actionUpdate($id)
     {
+        $model_cat = new Category();
+        $result = $model_cat->get_cat();
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         return $this->render('update', [
             'model' => $model,
+            'mas' => $result,
+
         ]);
     }
 
-    /**
-     * Deletes an existing Items model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    public function actionUpdate_image($id)
+    {
+        $model = $this->findModel($id);
+
+        $model->scenario = 'update-image';
+        if ($model->load(Yii::$app->request->post())) {
+
+            $image = UploadedFile::getInstance($model, 'Img');
+            $model->Img = 'web/img/' . $image->BaseName . '.' . $image->extension;
+            if ($model->save()) {
+                $image->saveAs('img/' . $image->BaseName . '.' . $image->extension);
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+
+        } else {
+
+            return $this->render('update-image', [
+                'model' => $model,
+            ]);
+        }
+    }
+
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -122,13 +145,6 @@ class ItemsController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the Items model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Items the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     protected function findModel($id)
     {
         if (($model = Items::findOne($id)) !== null) {
@@ -136,5 +152,15 @@ class ItemsController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionValidate()
+    {
+        $model = new Items();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+
+        }
     }
 }

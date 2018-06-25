@@ -10,6 +10,7 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
+        '@admin' =>'/modules/admin/web'
     ],
     'modules' => [
         'admin' => [
@@ -67,7 +68,7 @@ $config = [
                 'shop'=>'site/shop',
                 'item/<id:\d+>'=> 'items/index',
                 'admin/admin_items'=>'admin/default/admin_items',
-
+                'admin/order/change_status/<id:\d+>' =>'admin/order/change_status'
             ],
         ],
     ],

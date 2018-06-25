@@ -8,6 +8,8 @@
 namespace app\modules\admin\assets;
 
 use yii\web\AssetBundle;
+use Yii;
+
 
 /**
  * Main application asset bundle.
@@ -17,16 +19,24 @@ use yii\web\AssetBundle;
  */
 class admin_Asset extends AssetBundle
 {
-//    public $sourcePath = '@vendor/almasaeed2010/adminlte/bower_components/datatables.net-bs';
-    public $sourcePath = '@app/modules/admin/web';
-//    public $baseUrl = '@web';
-    public $css = [
-    'css/admin.css'
 
+    public $basePath = '/modules/admin';
+    public $baseUrl = '/modules/admin/web';
+    public $css = [
+    'css/admin.css',
     ];
 
     public $js = [
+        'js/admin.js',
 
+    //вынести в виджет..
+        'https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js',
+        'https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js',
+        'https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js',
+        'https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js',
 
     ];
     public $depends = [
@@ -34,4 +44,5 @@ class admin_Asset extends AssetBundle
 //        'yii\web\YiiAsset',
 //        'yii\bootstrap\BootstrapAsset',
     ];
+    
 }

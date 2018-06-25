@@ -1,3 +1,11 @@
+td.details-control {
+    background: url('/modules/admin/web/img/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('/modules/admin/web/img/details_close.png') no-repeat center center;
+
+}
 .title_centr
 {
     text-align: center;
@@ -94,4 +102,9 @@
 }
 .items_table tr td:last-child {
     border-right: none;
+
+.box-header>.box-tools {
+
+    right: 43px !important;
+
 }

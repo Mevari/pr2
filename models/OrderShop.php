@@ -12,9 +12,7 @@ class OrderShop extends ActiveRecord
     {
         return 'Order_shop';
     }
-    public function getOrderItems(){
-        $this->hasMany(OrderItems::className(),['order_id' =>'id']);
-    }
+
     public function rules()
     {
         return [
@@ -39,4 +37,17 @@ class OrderShop extends ActiveRecord
             'Comment' => 'Комментарий',
         ];
     }
+
+    public function getItems(){
+       return $this->hasMany(OrderItems::className(),['id_order' =>'id']);
+    }
+
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['items']='items';
+        return $fields;
+    }
+
 }

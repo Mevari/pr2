@@ -25,9 +25,12 @@ class AppAsset extends AssetBundle
         'css/animate.min.css',
         'css/flexslider.css',
         'css/jquery.fancybox.css',
-//        'css/font-icons.css',
+
         "https://use.fontawesome.com/releases/v5.0.13/css/all.css",
     ];
+
+
+
     public $js = [
         'js/bootstrap.min.js',
 //        'js/jquery-3.3.1.min.js',

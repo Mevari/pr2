@@ -25,6 +25,7 @@ class Category extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+
     public function rules()
     {
         return [
@@ -48,6 +49,8 @@ class Category extends \yii\db\ActiveRecord
     }
     public function getItems()
     {
-        return $this->hasMany(Items::className(), ['id_Category' => 'id']);
+        return $this->hasMany(Items::className(), ['id' => 'id_Category']);
     }
+
+
 }

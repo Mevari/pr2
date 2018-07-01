@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\web\JsExpression;
+
+
 ?>
 
 <?= \nullref\datatable\DataTable::widget([
@@ -55,5 +57,15 @@ use yii\web\JsExpression;
 ])
 
 ?>
+<?
+$this->registerJsFile('/modules/admin/web/js/admin.js', ['depends' => 'app\modules\admin\assets\admin_Asset']);
+$this->registerJsFile('https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js', ['depends' => 'app\modules\admin\assets\admin_Asset']);
+$this->registerJsFile('https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js', ['depends' => 'app\modules\admin\assets\admin_Asset']);
+$this->registerJsFile('https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js',['depends' => 'app\modules\admin\assets\admin_Asset']);
+$this->registerJsFile('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js', ['depends' => 'app\modules\admin\assets\admin_Asset']);
+$this->registerJsFile('https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js', ['depends' => 'app\modules\admin\assets\admin_Asset']);
+$this->registerJsFile( 'https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js', ['depends' => 'app\modules\admin\assets\admin_Asset']);
+$this->registerJsFile( 'https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js',['depends' => 'app\modules\admin\assets\admin_Asset']);?>
+
 <?//=Html::img('/modules/admin/web/img/details_open.png');?>
 <?//=Html::img(Url::to('@admin/img/details_open.png'));?>

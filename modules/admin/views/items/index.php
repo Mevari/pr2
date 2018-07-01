@@ -49,10 +49,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'tableOptions' => [
                     'class' => 'table items_table'
                 ],
+                'rowOptions' => function ($model, $key, $index, $grid) {
+                    return ['data-id' => $model->id];
+                },
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
 
-                    'Name',
+                    'attribute' => 'Name',
+
                     'Description',
                     ['attribute' => 'Img',
                         'value' => function ($data) {
@@ -88,4 +92,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ]); ?>
         </div>
     </div>
+<?php
+$this->registerJs("
 
+    $('td').click(function (e) {
+        var id = $(this).closest('tr').data('id');
+        if(e.target == this)
+            location.href = '" . Url::to(['items/update']) . "?id=' + id;
+    });
+
+");

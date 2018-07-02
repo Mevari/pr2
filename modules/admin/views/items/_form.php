@@ -46,8 +46,13 @@ use yii\helpers\ArrayHelper;
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+
     </div>
 
     <?php ActiveForm::end(); ?>
+
+    <?= Html::a('Back', ['/admin/items'], ['class' => 'btn btn-primary']) ?>
+
+    <?= Html::a('Update Images', ['update_image', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 
 </div>

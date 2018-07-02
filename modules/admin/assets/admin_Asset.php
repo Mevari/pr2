@@ -26,6 +26,7 @@ class admin_Asset extends AssetBundle
     'css/admin.css',
     ];
 
+
     public $js = array(
 //       'js/admin.js',
 //
@@ -37,12 +38,11 @@ class admin_Asset extends AssetBundle
 //        'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js',
 //        'https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js',
 //        'https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js',
-
     );
     public $depends = [
         'dmstr\web\AdminLteAsset',
 //        'yii\web\YiiAsset',
 //        'yii\bootstrap\BootstrapAsset',
     ];
-    
+
 }

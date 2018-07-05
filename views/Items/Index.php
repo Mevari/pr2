@@ -23,6 +23,7 @@ $this->title = $item->Name;
             <div class="col-lg-5 order-lg-2 order-1">
                 <div class="image_selected">
                     <?= Html::img(Url::to([$item->Img])) ?>
+<!--                    --><?//= Html::img(ImageProporcional('/img/giant.jpg',300,300,100));?>
                 </div>
             </div>
 

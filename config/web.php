@@ -62,9 +62,11 @@ $config = [
                 'cart/add/<id:\d+>'=>'cart/add',
                 'cart/delete_product/<id:\d+>'=>'cart/delete_product',
                 'cart/delete_cart/<id:\d+>'=>'cart/delete_cart',
+               
                 'category/<id:\d+>/page/<page:\d+>' =>'category/index',
                 'category/page/<page:\d+>' =>'category/index',
                 'category/<id:\d+>' =>'category/index',
+                'category/index' =>'category/index',
                 'shop'=>'site/shop',
                 'item/<id:\d+>'=> 'items/index',
                 'admin/admin_items'=>'admin/default/admin_items',

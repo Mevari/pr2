@@ -60,7 +60,7 @@ AppAsset::register($this);
 
                     ?>
                     <div class="form-group has-feedback">
-                        <? echo AutoComplete::widget([
+                        <?= AutoComplete::widget([
                             'name' => 'search',
                             'options' => ['class' => 'form-control', 'id' => 'search'],
                             'clientOptions' => [

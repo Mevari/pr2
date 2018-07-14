@@ -13,7 +13,7 @@ $this->title = 'Поиск';
                     <?php foreach ($search_items as $row): ?>
                         <div class="col-lg-3 col-sm-3">
                             <div class="item_catalog">
-                                <a href=<?= URL::to(['article/index', 'id' => $row['id']]); ?>>
+                                <a href=<?= URL::to(['items/index', 'id' => $row['id']]); ?>>
                                     <div class="img_cont">
                                         <?= Html::img('/' . $row['Img']) ?>
                                     </div>

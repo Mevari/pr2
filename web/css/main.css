@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700);
+﻿@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700);
 @import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic,700);
 
 
@@ -430,7 +430,12 @@ ul, il {
 .photo_order_items
 { background-color: white;
     text-align: center;
-    height: 150px;
+    height: 170px;
+}
+.photo_order_items a
+{   display:block;
+    text-align: center;
+    height: inherit;
 }
 .photo_order_items img
 {
@@ -491,10 +496,13 @@ ul, il {
     font-size: 20px;
 }
 .order_row
-{   margin-bottom: 20px;
+{   
+padding: 10px 0px;
+margin-bottom: 20px;
     border-style: none none solid none;
     border-color: #eee;
     border-width: 1px;
+   
 }
 #basket a
 {

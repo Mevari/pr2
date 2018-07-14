@@ -11,11 +11,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="container-fluid">
         <div class="row">
             <div class=" col-sm-2">
-                <? echo app\components\MenuWidget::widget(); ?>
+                <?= app\components\MenuWidget::widget(); ?>
             </div>
             <div class="col-lg-10 col-sm-10 ">
                 <?php foreach ($Items as $row): ?>
-                    <div class="col-lg-3 col-sm-3">
+                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <div class="item_catalog animated fadeInUp">
                             <a href=<?= URL::to(['items/index', 'id' => $row['id']]); ?>>
                                 <div class="img_cont">

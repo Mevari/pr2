@@ -1,87 +1,148 @@
 <?php
+
 namespace app\controllers;
+
 use Yii;
+
 use app\models\Category;
+
 use yii\data\ActiveDataProvider;
+
 use yii\web\Controller;
+
 use yii\web\NotFoundHttpException;
+
 use yii\filters\VerbFilter;
+
 use app\models\Items;
+
 use yii\data\Pagination;
+
 /**
  * CategoryController implements the CRUD actions for Category model.
  */
 class CategoryController extends Controller
+
 {
+
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
+
     {
+
         return [
+
             'verbs' => [
+
                 'class' => VerbFilter::className(),
+
                 'actions' => [
+
                     'delete' => ['POST'],
+
                 ],
+
             ],
+
         ];
+
     }
+
     /**
      * Lists all Category models.
      * @return mixed
      */
-    public function actionIndex($id=0)
+
+    public function actionIndex($id = 0)
+
     {
 
+
 //        $id = Yii::$app->request->get('id');
+
         $query = Items::find();
-        if($id<>0)
-        {
-            $query->where(['id_category'=>$id]);
+
+        if ($id <> 0) {
+
+            $query->where(['id_category' => $id]);
+
         }
+
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'PageSize'=>10,'forcePageParam'=>false,'pageSizeParam'=>false]);
+
+        $pages = new Pagination(['totalCount' => $countQuery->Count(), 'PageSize' => 10, 'forcePageParam' => false, 'pageSizeParam' => false]);
+
 
         $models = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
 
+
         return $this->render('index', [
 
+
             'Items' => $models,
+
             'pages' => $pages,
+
         ]);
-    }
-    public function actionItem($id=0)
-    {
 
     }
+
+    public function actionItem($id = 0)
+
+    {
+
+
+    }
+
+
     /**
      * Displays a single Category model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+
     public function actionView($id)
+
     {
+
         return $this->render('view', [
+
             'model' => $this->findModel($id),
+
         ]);
+
     }
+
     /**
      * Creates a new Category model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+
     public function actionCreate()
+
     {
+
         $model = new Category();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             return $this->redirect(['view', 'id' => $model->id]);
+
         }
+
         return $this->render('create', [
+
             'model' => $model,
+
         ]);
+
     }
+
     /**
      * Updates an existing Category model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -89,16 +150,27 @@ class CategoryController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+
     public function actionUpdate($id)
+
     {
+
         $model = $this->findModel($id);
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             return $this->redirect(['view', 'id' => $model->id]);
+
         }
+
         return $this->render('update', [
+
             'model' => $model,
+
         ]);
+
     }
+
 
     /**
      * Deletes an existing Category model.
@@ -107,11 +179,17 @@ class CategoryController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+
     public function actionDelete($id)
+
     {
+
         $this->findModel($id)->delete();
+
         return $this->redirect(['index']);
+
     }
+
     /**
      * Finds the Category model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -119,11 +197,18 @@ class CategoryController extends Controller
      * @return Category the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
+
     protected function findModel($id)
+
     {
         if (($model = Category::findOne($id)) !== null) {
+
             return $model;
+
         }
+
         throw new NotFoundHttpException('The requested page does not exist.');
+
     }
+
 }

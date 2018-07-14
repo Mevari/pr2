@@ -6,7 +6,9 @@ use dmstr\widgets\Alert;
 <div class="content-wrapper">
 <!--    <section class="content-header">-->
 <!--        --><?php //if (isset($this->blocks['content-header'])) { ?>
-<!--            <h1>--><?//= $this->blocks['content-header'] ?><!--</h1>-->
+<!--            <h1>-->
+<!--        --><?php // $this->blocks['content-header'] ?>
+<!--</h1>-->
 <!--        --><?php //} else { ?>
 <!--            <h1>-->
 <!--                --><?php
@@ -21,12 +23,8 @@ use dmstr\widgets\Alert;
 <!--            </h1>-->
 <!--        --><?php //} ?>
 <!---->
-<!--        --><?//=
-//        Breadcrumbs::widget(
-//            [
-//                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-//            ]
-//        ) ?>
+
+
 <!--    </section>-->
 
     <section class="content">

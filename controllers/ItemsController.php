@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use yii\web\Controller;
@@ -13,7 +14,7 @@ class ItemsController extends Controller
         $item = Items::findOne($id);
 
 
-        return $this->render('index',['item'=>$item,]);
+        return $this->render('index', ['item' => $item,]);
     }
 
 }
